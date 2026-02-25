@@ -51,7 +51,7 @@ export default function CarouselSlider() {
           animate={{ x: ["0%", "-50%"] }}
           transition={{
             repeat: Infinity,
-            duration: 24,
+            duration: 14,
             delay: 0.5,
             ease: "linear",
           }}
@@ -72,7 +72,7 @@ export default function CarouselSlider() {
                 </h3>
                 <p className="text-xl">{service.description}</p>
                 <div className="flex flex-row items-center gap-2 text-xl">
-                  <div className="w-10 h-1 bg-black" />
+                  <div className="w-14 h-1 bg-black" />
                   <div className="w-2 h-2 rounded-full bg-[#9C27B0]" />
                   <button>Know</button>
                 </div>

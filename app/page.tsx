@@ -12,6 +12,7 @@ export default function Home() {
       <WhyUs />
       <CarouselSlider />
       <StrategySection />
+      
       <ScaleSection />
       <WhyChooseUs />
       <Contact />

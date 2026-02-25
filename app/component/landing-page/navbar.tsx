@@ -24,7 +24,7 @@ export default function Navbar() {
             alt="ABCD Media Logo"
             className="h-9 w-auto"
           />
-          <span className="text-xs text-white/60 mb-1">.ae</span>
+          <span className="text-xs text-white/60">.ae</span>
         </Link>
 
         {/* Desktop Links */}
