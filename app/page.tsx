@@ -3,7 +3,6 @@ import ScaleSection from "./component/landing-page/cta";
 import Hero from "./component/landing-page/hero";
 import StrategySection from "./component/landing-page/success";
 import Contact from "./component/landing-page/contact";
-import Hero from "./component/landing-page/hero";
 import WhyChooseUs from "./component/landing-page/whychooseus";
 import WhyUs from "./component/landing-page/whyus";
 export default function Home() {
@@ -13,7 +12,7 @@ export default function Home() {
       <WhyUs />
       <CarouselSlider />
       <StrategySection />
-      <ScaleSection/>
+      <ScaleSection />
       <WhyChooseUs />
       <Contact />
     </div>
