@@ -17,7 +17,6 @@ export default function Navbar() {
   return (
     <nav className="absolute top-10 left-0 w-full z-50 text-white">
       <div className="w-10/12 mx-auto flex items-end justify-between">
-
         {/* Logo */}
         <Link href="/" className="flex items-end gap-1">
           <img
@@ -29,7 +28,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex gap-8 font-medium items-end">
+        <div className="hidden md:flex gap-8 font-medium items-end font-sans">
           {navLinks.map((link) => (
             <Link
               key={link.href}
