@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function StrategySection() {
   return (
-    <section className="w-full text-white pt-28 pb-8 min-h-screen relative">
+    <section className="w-full text-white  pb-8 min-h-screen relative">
       <div className="w-2/3 h-full inset-0">
         <Image
           src="/ring 2.jpg"
@@ -17,7 +17,7 @@ export default function StrategySection() {
       <div className="w-10/12 mx-auto gap-10 absolute inset-0 flex justify-start items-center">
         {/* LEFT CONTENT */}
         <div>
-          {" "}
+          {" "} 
           {/* Heading */}
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight tracking-tight mb-12 md:whitespace-nowrap">
             From Strategy to Scalable <br /> Success{" "}
