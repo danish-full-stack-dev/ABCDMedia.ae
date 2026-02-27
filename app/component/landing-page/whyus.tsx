@@ -39,8 +39,8 @@ export default function WhyUs() {
   };
 
   return (
-    <section className="py-24 bg-white text-black h-screen">
-      <div className="max-w-10/12 mx-auto px-6 grid md:grid-cols-2 gap-20 items-start">
+    <section className="py-24 bg-white text-black">
+      <div className="max-w-10/12 mx-auto px-6 grid md:grid-cols-2 gap-20 items-start h-auto">
         {/* LEFT COLUMN */}
         <div className="flex flex-col">
           <div className="flex flex-col justify-start -mt-6 md:-mt-10">
