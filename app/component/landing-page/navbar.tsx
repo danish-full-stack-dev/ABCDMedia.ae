@@ -8,7 +8,8 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: "Media Buying", href: "/pages/media-buying" },
+    { name: "Google Ads", href: "/google-ads" },
+    // { name: "Media Buying", href: "/pages/media-buying" },
     { name: "Web Development", href: "/pages/web-development" },
     { name: "SEO Services", href: "/pages/seo-software" },
     { name: "AI Automation", href: "/pages/ai-automation" },
