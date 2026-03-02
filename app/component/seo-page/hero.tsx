@@ -26,8 +26,8 @@ export default function Hero() {
         <div className="flex justify-center items-center mx-auto  w-full gap-1 mb-6">
           <Home className="h-5 w-5" />
           <p className="flex items-center gap-2">
-            Home <ArrowRight className="h-4 w-4" />
-            pricing
+            Home <ArrowRight className="h-4 w-4" /> Ads-Management <ArrowRight className="h-4 w-4" />
+            Social Ads
           </p>
         </div>
         {/* Heading */}
@@ -37,7 +37,7 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="text-2xl md:text-4xl font-semibold leading-[1.15] tracking-tight mb-3"
         >
-          Find a plan that right for you..
+          The Social Ads agency that acutally<br/> deliver - and then some.
         </motion.h1>
 
         {/* Sub Text */}
