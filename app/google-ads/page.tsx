@@ -5,7 +5,7 @@ import OurApproach from "../component/google-ads-page/ourApproach";
 import ExpertiseBanner from "../component/google-ads-page/expertise";
 import StrategyCallSection from "../component/google-ads-page/strategy-call";
 import FAQSection from "../component/google-ads-page/FAQ-section";
-import  TestimonialsSection  from "../component/google-ads-page/testimonials";
+import TestimonialsSection from "../component/google-ads-page/testimonials";
 import Contact from "../component/google-ads-page/contact";
 export default function GoogleAdsPage() {
   return (
@@ -14,11 +14,11 @@ export default function GoogleAdsPage() {
       <DidYouKnow />
       <Trust />
       <OurApproach />
-     < ExpertiseBanner/>
-     <StrategyCallSection/>
-     <FAQSection/>
-     <TestimonialsSection/>
-     <Contact/>
+      <ExpertiseBanner />
+      <StrategyCallSection />
+      <FAQSection />
+      <TestimonialsSection />
+      <Contact />
     </div>
   );
 }

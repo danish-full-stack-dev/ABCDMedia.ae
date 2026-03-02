@@ -10,9 +10,11 @@ export default function Navbar() {
   const navLinks = [
     { name: "Google Ads", href: "/google-ads" },
     // { name: "Media Buying", href: "/pages/media-buying" },
-    { name: "Web Development", href: "/pages/web-development" },
-    { name: "SEO Services", href: "/pages/seo-software" },
-    { name: "AI Automation", href: "/pages/ai-automation" },
+    { name: "Pricing", href: "/pricing" },
+    { name: "Web Development", href: "#" },
+    { name: "Email-Marketing", href: "$" },
+    { name: "SEO Services", href: "/seo-service" },
+    { name: "Social-Ads", href: "/social-ads" },
   ];
 
   return (
@@ -34,13 +36,16 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className={`transition-all duration-200 ${
-                link.name === "Web Development"
-                  ? " text-[#C026D3]"
+              className={`transition-all duration-200 group ${
+                link.name === "Pricing"
+                  ? " text-[#C026D3] hover:text-white"
                   : "hover:text-[#9C27B0]"
               }`}
             >
               {link.name}
+              <div
+                className={`w-0 group-hover:w-11/12 mx-auto h-0.5 ${link.name === "Pricing" ? "bg-white" : "bg-[#9C27B0]"} group-hover:translate-x rounded-2xl transition-all duration-300`}
+              />
             </Link>
           ))}
         </div>
