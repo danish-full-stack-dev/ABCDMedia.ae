@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 /* ─── Google Logo SVG ─────────────────────────────────────────────────────── */
@@ -32,7 +32,7 @@ const GoogleLogo: React.FC<{ size?: number }> = ({ size = 36 }) => (
 
 /* ─── Quote bubble icon ───────────────────────────────────────────────────── */
 const QuoteBubble: React.FC = () => (
-  <div className="w-10 h-10 rounded-full rounded-bl-none bg-purple-600 flex items-center justify-center shadow-lg shadow-purple-500/30 flex-shrink-0">
+  <div className="w-10 h-10 rounded-full rounded-bl-none bg-[#9C27B0] flex items-center justify-center shadow-lg shadow-purple-500/30 flex-shrink-0">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
       <path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 0 1-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 0 1-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z" />
     </svg>
@@ -112,7 +112,7 @@ const testimonials: Testimonial[] = [
 
 /* ─── Single Card ─────────────────────────────────────────────────────────── */
 const TestimonialCard: React.FC<{ t: Testimonial }> = ({ t }) => (
-  <div className="relative bg-white rounded-2xl p-7 shadow-sm border border-gray-100 flex-shrink-0 w-[360px] flex flex-col gap-4 hover:-translate-y-1 hover:shadow-xl hover:shadow-purple-100/60 transition-all duration-300">
+  <div className="relative bg-white rounded-2xl p-7 shadow-sm border md:min-w-[50svh] min-w-[35svh] border-gray-100 shrink-0 flex flex-col gap-4 hover:-translate-y-1 hover:shadow-xl hover:shadow-purple-100/60 transition-all duration-300">
     {/* Quote bubble — top right */}
     <div className="absolute -top-4 right-6">
       <QuoteBubble />
@@ -131,7 +131,7 @@ const TestimonialCard: React.FC<{ t: Testimonial }> = ({ t }) => (
 
     {/* Divider */}
     <div className="w-full h-px bg-gray-100" />
-    
+
     {/* Author row */}
     <div className="flex items-center justify-between">
       <div className="flex items-center gap-3">
@@ -161,7 +161,7 @@ const ScrollBtn: React.FC<{ dir: "left" | "right"; onClick: () => void }> = ({
 }) => (
   <button
     onClick={onClick}
-    className="w-11 h-11 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center hover:bg-purple-600 hover:border-purple-600 hover:text-white text-gray-500 transition-all duration-200 flex-shrink-0"
+    className="w-11 h-11 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center hover:bg-[#9C27B0] hover:border-[#9C27B0] hover:text-white text-gray-500 transition-all duration-200 flex-shrink-0"
   >
     <svg
       width="18"
@@ -183,11 +183,16 @@ const ScrollBtn: React.FC<{ dir: "left" | "right"; onClick: () => void }> = ({
 
 /* ─── Main Section ────────────────────────────────────────────────────────── */
 export const TestimonialsSection: React.FC = () => {
+  const [index, setIndex] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scroll = (dir: "left" | "right") => {
     if (!scrollRef.current) return;
     const amount = 380;
+    if (dir === "left" && index > 0)
+      setIndex((prev) => (prev - 1) % testimonials.length);
+    else if (dir === "right" && index < testimonials.length - 1)
+      setIndex((prev) => (prev + 1) % testimonials.length);
     scrollRef.current.scrollBy({
       left: dir === "left" ? -amount : amount,
       behavior: "smooth",
@@ -195,12 +200,12 @@ export const TestimonialsSection: React.FC = () => {
   };
 
   return (
-    <section className="relative w-full py-20 overflow-hidden bg-gradient-to-b from-white via-purple-50/30 to-white">
+    <section className="relative w-full py-20 overflow-hidden bg-linear-to-b from-white via-purple-50/30 to-white">
       {/* Decorative background blobs */}
       <div className="absolute top-10 left-1/4 w-72 h-72 bg-purple-100/50 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 right-1/4 w-64 h-64 bg-pink-100/40 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 max-w-9/12 mx-auto px-6">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -209,7 +214,7 @@ export const TestimonialsSection: React.FC = () => {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-12"
         >
-          <h2 className="font-['Bricolage_Grotesque',_sans-serif] text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
             What Our Clients Say About us
           </h2>
         </motion.div>
@@ -220,7 +225,7 @@ export const TestimonialsSection: React.FC = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="flex justify-end gap-3 mb-6 px-1"
+          className="md:flex hidden justify-end gap-3 mb-6 px-1"
         >
           <ScrollBtn dir="left" onClick={() => scroll("left")} />
           <ScrollBtn dir="right" onClick={() => scroll("right")} />
@@ -229,13 +234,13 @@ export const TestimonialsSection: React.FC = () => {
         {/* Cards track */}
         <div className="relative">
           {/* Left fade */}
-          <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-16 bg-linear-to-r from-white to-transparent z-10 pointer-events-none" />
           {/* Right fade */}
-          <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 bg-linear-to-l from-white to-transparent z-10 pointer-events-none" />
 
           <motion.div
             ref={scrollRef}
-            className="flex gap-6 overflow-x-auto pb-6 scroll-smooth"
+            className="flex gap-6 overflow-x-auto py-6 scroll-smooth"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -247,7 +252,7 @@ export const TestimonialsSection: React.FC = () => {
             }}
           >
             {/* Partial left peek card (ghost) */}
-            <div className="flex-shrink-0 w-10" />
+            <div className="shrink-0 md:w-10 w-0" />
 
             {testimonials.map((t, i) => (
               <motion.div
@@ -266,13 +271,13 @@ export const TestimonialsSection: React.FC = () => {
             ))}
 
             {/* Partial right peek spacer */}
-            <div className="shrink-0 w-10" />
+            <div className="shrink-0 md:w-10 w-0" />
           </motion.div>
 
           {/* Hide scrollbar cross-browser */}
           <style>{`
             @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&display=swap');
-            div::-webkit-scrollbar { display: none; }
+            // div::-webkit-scrollbar { display: none; }
           `}</style>
         </div>
 
@@ -289,13 +294,13 @@ export const TestimonialsSection: React.FC = () => {
               key={i}
               onClick={() => {
                 if (!scrollRef.current) return;
-                const cardWidth = 376;
+                const cardWidth = 400;
                 scrollRef.current.scrollTo({
                   left: i * cardWidth,
                   behavior: "smooth",
                 });
               }}
-              className={`h-1.5 rounded-full transition-all duration-300 ${i === 0 ? "w-8 bg-purple-600" : "w-1.5 bg-gray-300 hover:bg-purple-300"}`}
+              className={`h-1.5 rounded-full transition-all duration-300 ${index === i ? "w-8 bg-[#9C27B0]" : "w-1.5 bg-gray-300 hover:bg-[#9C27B0]/70"}`}
             />
           ))}
         </motion.div>

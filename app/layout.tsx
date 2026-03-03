@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   description:
     "Digital Marketing Agency Specializing in Media Buying, Web Development, SEO, and AI Automation",
   icons: {
-    icon: "/webIcon.jpg",
+    icon: "/logo.jpg",
   },
 };
 

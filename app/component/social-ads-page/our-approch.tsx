@@ -175,7 +175,7 @@ export const ApproachSection: React.FC = () => {
         }
       `}</style>
 
-      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 32px" }}>
+      <div className="max-w-9/12 mx-auto">
         {/* ── Top header row ─────────────────────────────────────────────── */}
         <div
           style={{
@@ -236,9 +236,8 @@ export const ApproachSection: React.FC = () => {
 
         {/* ── Research — full-width hero card ────────────────────────────── */}
         <div
-          className="hover:text-white bg-slate-100 duration-200 transition-colors hover:bg-linear-to-br hover:from-[#2d1b4e] hover:via-[#6a0dad] to-[#c026d3]"
+          className="hover:text-white bg-slate-100 duration-400 transition-colors hover:bg-linear-to-br hover:from-[#2d1b4e] hover:via-[#6a0dad] to-[#c026d3]"
           style={{
-            animationDelay: ".25s",
             position: "relative",
             borderRadius: 20,
             overflow: "hidden",
@@ -421,17 +420,14 @@ export const ApproachSection: React.FC = () => {
         <div className="grid grid-flow-col grid-cols-5 gap-5">
           {/* Strategise */}
           <div
-            className="grid col-span-2 text-black hover:text-white bg-slate-100 duration-200 transition-colors hover:bg-linear-to-br hover:from-[#2d1b4e] hover:via-[#6a0dad] to-[#c026d3]"
+            className="grid col-span-2 text-black  hover:text-white bg-slate-100 duration-300 transition-colors hover:bg-linear-to-br hover:from-[#2d1b4e] hover:via-[#6a0dad] to-[#c026d3]"
             style={{
-              animationDelay: ".1s",
               borderRadius: 20,
               padding: "44px 40px",
               position: "relative",
               overflow: "hidden",
               minHeight: 260,
               border: "1px solid rgba(156,39,176,.1)",
-              transition:
-                "transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s",
             }}
           >
             {/* Decorative circle bg */}
@@ -486,17 +482,14 @@ export const ApproachSection: React.FC = () => {
 
           {/* Analyse */}
           <div
-            className="grid col-span-3 text-black hover:text-white bg-slate-100 duration-200 transition-colors hover:bg-linear-to-br hover:from-[#2d1b4e] hover:via-[#6a0dad] to-[#c026d3]"
+            className="grid col-span-3 text-black hover:text-white bg-slate-100 duration-300 transition-colors hover:bg-linear-to-br hover:from-[#2d1b4e] hover:via-[#6a0dad] to-[#c026d3]"
             style={{
-              animationDelay: ".22s",
               borderRadius: 20,
               padding: "44px 40px",
               position: "relative",
               overflow: "hidden",
               minHeight: 260,
               border: "1px solid rgba(156,39,176,.1)",
-              transition:
-                "transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s",
             }}
           >
             <div
@@ -552,9 +545,8 @@ export const ApproachSection: React.FC = () => {
 
         {/* Optimise */}
         <div
-          className="hover:text-white bg-slate-100 duration-200 transition-colors hover:bg-linear-to-br hover:from-[#2d1b4e] hover:via-[#6a0dad] to-[#c026d3]"
+          className="hover:text-white bg-slate-100 duration-300 transition-colors hover:bg-linear-to-br hover:from-[#2d1b4e] hover:via-[#6a0dad] to-[#c026d3]"
           style={{
-            animationDelay: ".25s",
             position: "relative",
             borderRadius: 20,
             overflow: "hidden",
@@ -620,7 +612,7 @@ export const ApproachSection: React.FC = () => {
                 letterSpacing: "-.02em",
               }}
             >
-              Research
+              Optimise
             </h3>
             <p
               style={{
@@ -738,17 +730,14 @@ export const ApproachSection: React.FC = () => {
         <div className="grid grid-flow-col grid-cols-5 gap-5">
           {/* Report */}
           <div
-            className="grid col-span-3 text-black hover:text-white bg-slate-100 duration-200 transition-colors hover:bg-linear-to-br hover:from-[#2d1b4e] hover:via-[#6a0dad] to-[#c026d3]"
+            className="grid col-span-3 text-black hover:text-white bg-slate-100 duration-300 transition-colors hover:bg-linear-to-br hover:from-[#2d1b4e] hover:via-[#6a0dad] to-[#c026d3]"
             style={{
-              animationDelay: ".1s",
               borderRadius: 20,
               padding: "44px 40px",
               position: "relative",
               overflow: "hidden",
               minHeight: 260,
               border: "1px solid rgba(156,39,176,.1)",
-              transition:
-                "transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s",
             }}
           >
             {/* Decorative circle bg */}
@@ -774,7 +763,7 @@ export const ApproachSection: React.FC = () => {
                 letterSpacing: "-.02em",
               }}
             >
-              Strategise
+              Report
             </h3>
             <p
               style={{
@@ -804,17 +793,14 @@ export const ApproachSection: React.FC = () => {
 
           {/* Review */}
           <div
-            className="grid col-span-2 text-black hover:text-white bg-slate-100 duration-200 transition-colors hover:bg-linear-to-br hover:from-[#2d1b4e] hover:via-[#6a0dad] to-[#c026d3]"
+            className="grid col-span-2 text-black hover:text-white bg-slate-100 duration-300 transition-colors hover:bg-linear-to-br hover:from-[#2d1b4e] hover:via-[#6a0dad] to-[#c026d3]"
             style={{
-              animationDelay: ".22s",
               borderRadius: 20,
               padding: "44px 40px",
               position: "relative",
               overflow: "hidden",
               minHeight: 260,
               border: "1px solid rgba(156,39,176,.1)",
-              transition:
-                "transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s",
             }}
           >
             <div
@@ -839,7 +825,7 @@ export const ApproachSection: React.FC = () => {
                 letterSpacing: "-.02em",
               }}
             >
-              Analyse
+              Review
             </h3>
             <p
               style={{
@@ -866,7 +852,7 @@ export const ApproachSection: React.FC = () => {
               <img src="/rye-assic.png" alt="" className="w-40 h-20" />
             </div>
           </div>
-        </div>
+        </div>  
       </div>
     </section>
   );

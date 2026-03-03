@@ -59,20 +59,23 @@ export default function OurApproach() {
             </h2>
 
             {/* 3D Decorative Image */}
-    <div className="w-full flex items-center justify-center">
-  <div className="relative w-full" style={{ aspectRatio: "1 / 1.1", maxWidth: "800px" }}>
-    <Image
-      src="/left-ring.png"
-      alt="3D decorative shape"
-      fill
-      className="object-cover"
-      style={{
-        filter: "drop-shadow(0 8px 30px rgba(0,0,0,0.10))",
-        objectPosition: "20% center", // <-- adjust horizontal alignment
-      }}
-    />
-  </div>
-</div>
+            <div className="w-full flex items-center justify-center">
+              <div
+                className="relative w-full"
+                style={{ aspectRatio: "1 / 1.1", maxWidth: "800px" }}
+              >
+                <Image
+                  src="/left-ring.png"
+                  alt="3D decorative shape"
+                  fill
+                  className="object-cover"
+                  style={{
+                    filter: "drop-shadow(0 8px 30px rgba(0,0,0,0.10))",
+                    objectPosition: "20% center", // <-- adjust horizontal alignment
+                  }}
+                />
+              </div>
+            </div>
           </div>
 
           {/* ===== RIGHT: Description + Accordion ===== */}
