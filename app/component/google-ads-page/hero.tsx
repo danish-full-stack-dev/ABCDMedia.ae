@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ChevronRight, Home } from "lucide-react";
 import Link from "next/link";
 
 export default function Hero() {
@@ -39,23 +40,14 @@ export default function Hero() {
           {/* Breadcrumb */}
           <div className="flex items-center gap-2 text-lg text-gray-300 mb-10">
             <span className="flex items-center gap-1">
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                className="opacity-70"
-              >
-                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                <polyline points="9 22 9 12 15 12 15 22" />
-              </svg>
+              <Home className="h-5 w-5" />
               Home
             </span>
-            <span className="opacity-100">›</span>
+            <ChevronRight size={14} />
+
             <span className="opacity-70">Ads Management</span>
-            <span className="opacity-100">›</span>
+            <ChevronRight size={14} />
+
             <span className="font-semibold text-white">Google Ads</span>
           </div>
 
@@ -80,8 +72,9 @@ export default function Hero() {
             className="text-gray-300 text-base md:text-lg w-10/12 mx-auto leading-relaxed"
           >
             Our UK-based Google Ads Agency has steered thousands of successful
-            campaigns, <br />managing an annual ad spend of over £20 million. What to
-            speak with our specialists?
+            campaigns, <br />
+            managing an annual ad spend of over £20 million. What to speak with
+            our specialists?
           </motion.p>
         </div>
 
@@ -95,8 +88,6 @@ export default function Hero() {
           </div>
         </div>
       </section>
-
-      
     </>
   );
 }

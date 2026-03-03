@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Home } from "lucide-react";
+import { ArrowRight, ChevronRight, Home } from "lucide-react";
 import Link from "next/link";
 
 export default function Hero() {
@@ -26,7 +26,7 @@ export default function Hero() {
         <div className="flex justify-center items-center mx-auto  w-full gap-1 mb-6">
           <Home className="h-5 w-5" />
           <p className="flex items-center gap-2">
-            Home <ArrowRight className="h-4 w-4" />
+            Home <ChevronRight size={14} />
             pricing
           </p>
         </div>

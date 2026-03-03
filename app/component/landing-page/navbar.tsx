@@ -9,10 +9,9 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "Google Ads", href: "/google-ads" },
-    // { name: "Media Buying", href: "/pages/media-buying" },
     { name: "Pricing", href: "/pricing" },
     { name: "Web Development", href: "#" },
-    { name: "Email-Marketing", href: "$" },
+    { name: "Email-Marketing", href: "/email-marketing" },
     { name: "SEO Services", href: "/seo-service" },
     { name: "Social-Ads", href: "/social-ads" },
   ];

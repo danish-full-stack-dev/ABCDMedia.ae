@@ -9,7 +9,7 @@ const faqs = [
     id: 1,
     question: "Why choose us for your PPC management needs?",
     answer:
-      "Our team doesn't just manage PPC campaigns; we become an extension of your business. With a combination of data-driven strategies, continuous optimisation, and a passion for achieving your goals, we stand apart. Add to this our commitment to transparency, regular reporting, and open communication, and you have a partnership that's truly geared for success.",
+      "Our team doesn’t just manage PPC campaigns; we become an extension of your business. With a combination of data-driven strategies, continuous optimisation, and a passion for achieving your goals, we stand apart. Add to this our commitment to transparency, regular reporting, and open communication, and you have a partnership that’s truly geared for success.",
   },
   {
     id: 2,
@@ -44,7 +44,7 @@ export default function FAQSection() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center py-24">
+    <div className="flex flex-col justify-center items-center py-24 bg-white text-black">
       <h2 className="text-5xl font-semibold font-sans mb-10">
         Frequently Asked <span className="text-[#9C27B0]"> Questions</span>
       </h2>
