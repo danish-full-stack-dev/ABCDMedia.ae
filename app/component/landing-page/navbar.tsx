@@ -11,7 +11,7 @@ export default function Navbar() {
     { name: "Google Ads", href: "/google-ads" },
     // { name: "Media Buying", href: "/pages/media-buying" },
     { name: "Pricing", href: "/pricing" },
-    { name: "Web Development", href: "#" },
+    { name: "Website Building ", href: "/website-building" },
     { name: "Email-Marketing", href: "$" },
     { name: "SEO Services", href: "/seo-service" },
     { name: "Social-Ads", href: "/social-ads" },
