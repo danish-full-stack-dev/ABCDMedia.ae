@@ -8,21 +8,18 @@ import WhatWeDo from "../component/website-building/what-wedo";
 import Trust from "../component/website-building/trust";
 import IndustriesWeCater from "../component/website-building/industries";
 
-
-
 export default function WebsiteBuildingPage() {
   return (
-    <div className="bg-black text-white">
+    <div className="">
       <Hero />
-     <WhatWeDo/>
-     <Trust />
-      <HowWeDo/>
-      <ExpertiseBanner/>
-      <IndustriesWeCater/>
-      <FAQSection/>
-      <TestimonialsSection/>
-      <Contact/>
-      
+      <WhatWeDo />
+      <Trust />
+      <HowWeDo />
+      <ExpertiseBanner />
+      <IndustriesWeCater />
+      <FAQSection />
+      <TestimonialsSection />
+      <Contact />
     </div>
   );
 }
