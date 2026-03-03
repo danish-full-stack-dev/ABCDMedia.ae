@@ -51,31 +51,96 @@ function DashboardVisual() {
     >
       <div style={{ display: "flex", gap: "6px", marginBottom: "8px" }}>
         {["#ff5f57", "#ffbd2e", "#28ca41"].map((c, i) => (
-          <div key={i} style={{ width: 8, height: 8, borderRadius: "50%", background: c }} />
+          <div
+            key={i}
+            style={{ width: 8, height: 8, borderRadius: "50%", background: c }}
+          />
         ))}
       </div>
       {/* Sidebar + Content */}
       <div style={{ display: "flex", gap: "6px" }}>
-        <div style={{ width: "28%", display: "flex", flexDirection: "column", gap: "4px" }}>
+        <div
+          style={{
+            width: "28%",
+            display: "flex",
+            flexDirection: "column",
+            gap: "4px",
+          }}
+        >
           <div style={{ background: "#3b4a6b", borderRadius: 4, height: 6 }} />
           {[1, 1, 1, 1, 1].map((_, i) => (
-            <div key={i} style={{ background: i === 0 ? "#4f6ef7" : "#2a3452", borderRadius: 4, height: 5 }} />
+            <div
+              key={i}
+              style={{
+                background: i === 0 ? "#4f6ef7" : "#2a3452",
+                borderRadius: 4,
+                height: 5,
+              }}
+            />
           ))}
         </div>
-        <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "5px" }}>
+        <div
+          style={{
+            flex: 1,
+            display: "flex",
+            flexDirection: "column",
+            gap: "5px",
+          }}
+        >
           {/* Stat row */}
           <div style={{ display: "flex", gap: "4px" }}>
             {[1, 1, 1, 1].map((_, i) => (
-              <div key={i} style={{ flex: 1, background: "#2a3452", borderRadius: 4, height: 20, padding: "3px 4px" }}>
-                <div style={{ background: "#3b4a6b", borderRadius: 2, height: 4, marginBottom: 2 }} />
-                <div style={{ background: "#4f6ef7", borderRadius: 2, height: 3, width: "60%" }} />
+              <div
+                key={i}
+                style={{
+                  flex: 1,
+                  background: "#2a3452",
+                  borderRadius: 4,
+                  height: 20,
+                  padding: "3px 4px",
+                }}
+              >
+                <div
+                  style={{
+                    background: "#3b4a6b",
+                    borderRadius: 2,
+                    height: 4,
+                    marginBottom: 2,
+                  }}
+                />
+                <div
+                  style={{
+                    background: "#4f6ef7",
+                    borderRadius: 2,
+                    height: 3,
+                    width: "60%",
+                  }}
+                />
               </div>
             ))}
           </div>
           {/* Chart area */}
-          <div style={{ background: "#2a3452", borderRadius: 4, height: 40, padding: "6px 8px", display: "flex", alignItems: "flex-end", gap: "3px" }}>
+          <div
+            style={{
+              background: "#2a3452",
+              borderRadius: 4,
+              height: 40,
+              padding: "6px 8px",
+              display: "flex",
+              alignItems: "flex-end",
+              gap: "3px",
+            }}
+          >
             {[60, 30, 80, 45, 90, 55, 70, 40, 85, 50, 95, 65].map((h, i) => (
-              <div key={i} style={{ flex: 1, background: i === 10 ? "#4f6ef7" : "#3b4a6b", borderRadius: "2px 2px 0 0", height: `${h}%` }} />
+              <div
+                key={i}
+                style={{
+                  flex: 1,
+                  background: i === 10 ? "#4f6ef7" : "#3b4a6b",
+                  borderRadius: "2px 2px 0 0",
+                  height: `${h}%`,
+                }}
+              />
             ))}
           </div>
         </div>
@@ -97,19 +162,79 @@ function BankingVisual() {
       }}
     >
       {/* Nav bar */}
-      <div style={{ background: "#16213e", padding: "8px 12px", display: "flex", alignItems: "center", gap: "8px" }}>
-        <div style={{ width: 20, height: 6, background: "#e94560", borderRadius: 3 }} />
-        <div style={{ flex: 1, height: 5, background: "#0f3460", borderRadius: 3 }} />
-        <div style={{ width: 14, height: 5, background: "#533483", borderRadius: 3 }} />
+      <div
+        style={{
+          background: "#16213e",
+          padding: "8px 12px",
+          display: "flex",
+          alignItems: "center",
+          gap: "8px",
+        }}
+      >
+        <div
+          style={{
+            width: 20,
+            height: 6,
+            background: "#e94560",
+            borderRadius: 3,
+          }}
+        />
+        <div
+          style={{ flex: 1, height: 5, background: "#0f3460", borderRadius: 3 }}
+        />
+        <div
+          style={{
+            width: 14,
+            height: 5,
+            background: "#533483",
+            borderRadius: 3,
+          }}
+        />
       </div>
       {/* Content */}
       <div style={{ padding: "14px 14px 0" }}>
-        <div style={{ color: "white", fontFamily: "'Syne', sans-serif", fontSize: 11, fontWeight: 700, marginBottom: 4 }}>
-          Digital banking<br />revolution
+        <div
+          style={{
+            color: "white",
+            fontFamily: "'Syne', sans-serif",
+            fontSize: 11,
+            fontWeight: 700,
+            marginBottom: 4,
+          }}
+        >
+          Digital banking
+          <br />
+          revolution
         </div>
-        <div style={{ width: "60%", height: 4, background: "#533483", borderRadius: 2, marginBottom: 8 }} />
-        <div style={{ width: "40%", height: 18, background: "#e94560", borderRadius: 4, marginBottom: 10, display: "flex", alignItems: "center", justifyContent: "center" }}>
-          <div style={{ width: "60%", height: 4, background: "rgba(255,255,255,0.7)", borderRadius: 2 }} />
+        <div
+          style={{
+            width: "60%",
+            height: 4,
+            background: "#533483",
+            borderRadius: 2,
+            marginBottom: 8,
+          }}
+        />
+        <div
+          style={{
+            width: "40%",
+            height: 18,
+            background: "#e94560",
+            borderRadius: 4,
+            marginBottom: 10,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <div
+            style={{
+              width: "60%",
+              height: 4,
+              background: "rgba(255,255,255,0.7)",
+              borderRadius: 2,
+            }}
+          />
         </div>
         {/* Credit card mockup */}
         <div
@@ -121,21 +246,76 @@ function BankingVisual() {
             overflow: "hidden",
           }}
         >
-          <div style={{ fontSize: 8, color: "rgba(255,255,255,0.6)", marginBottom: 8, fontFamily: "'DM Sans', sans-serif" }}>Design your personalized credit card.</div>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
+          <div
+            style={{
+              fontSize: 8,
+              color: "rgba(255,255,255,0.6)",
+              marginBottom: 8,
+              fontFamily: "'DM Sans', sans-serif",
+            }}
+          >
+            Design your personalized credit card.
+          </div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "flex-end",
+            }}
+          >
             <div>
               {[1, 1, 1].map((_, i) => (
-                <div key={i} style={{ display: "flex", gap: 3, marginBottom: 2 }}>
+                <div
+                  key={i}
+                  style={{ display: "flex", gap: 3, marginBottom: 2 }}
+                >
                   {[1, 1, 1, 1].map((__, j) => (
-                    <div key={j} style={{ width: 6, height: 3, background: "rgba(255,255,255,0.3)", borderRadius: 1 }} />
+                    <div
+                      key={j}
+                      style={{
+                        width: 6,
+                        height: 3,
+                        background: "rgba(255,255,255,0.3)",
+                        borderRadius: 1,
+                      }}
+                    />
                   ))}
                 </div>
               ))}
             </div>
-            <div style={{ color: "rgba(255,255,255,0.8)", fontSize: 9, fontWeight: 700, letterSpacing: 1 }}>VISA</div>
+            <div
+              style={{
+                color: "rgba(255,255,255,0.8)",
+                fontSize: 9,
+                fontWeight: 700,
+                letterSpacing: 1,
+              }}
+            >
+              VISA
+            </div>
           </div>
-          <div style={{ position: "absolute", right: -8, top: -8, width: 40, height: 40, borderRadius: "50%", background: "rgba(255,200,0,0.15)" }} />
-          <div style={{ position: "absolute", right: 4, top: -4, width: 28, height: 28, borderRadius: "50%", background: "rgba(255,200,0,0.1)" }} />
+          <div
+            style={{
+              position: "absolute",
+              right: -8,
+              top: -8,
+              width: 40,
+              height: 40,
+              borderRadius: "50%",
+              background: "rgba(255,200,0,0.15)",
+            }}
+          />
+          <div
+            style={{
+              position: "absolute",
+              right: 4,
+              top: -4,
+              width: 28,
+              height: 28,
+              borderRadius: "50%",
+              background: "rgba(255,200,0,0.1)",
+            }}
+          />
         </div>
       </div>
     </div>
@@ -165,14 +345,40 @@ function RoadmapVisual() {
     >
       <div style={{ display: "flex", gap: "4px", marginBottom: "8px" }}>
         {["#ff5f57", "#ffbd2e", "#28ca41"].map((c, i) => (
-          <div key={i} style={{ width: 7, height: 7, borderRadius: "50%", background: c }} />
+          <div
+            key={i}
+            style={{ width: 7, height: 7, borderRadius: "50%", background: c }}
+          />
         ))}
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
         {phases.map((p, i) => (
-          <div key={i} style={{ display: "flex", alignItems: "center", gap: 4 }}>
-            <div style={{ width: `${20 + i * 8}%`, minWidth: 20, height: 14, background: p.color, borderRadius: 4, display: "flex", alignItems: "center", paddingLeft: 4 }}>
-              <span style={{ fontSize: 5, color: "white", whiteSpace: "nowrap", overflow: "hidden" }}>{p.label}</span>
+          <div
+            key={i}
+            style={{ display: "flex", alignItems: "center", gap: 4 }}
+          >
+            <div
+              style={{
+                width: `${20 + i * 8}%`,
+                minWidth: 20,
+                height: 14,
+                background: p.color,
+                borderRadius: 4,
+                display: "flex",
+                alignItems: "center",
+                paddingLeft: 4,
+              }}
+            >
+              <span
+                style={{
+                  fontSize: 5,
+                  color: "white",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                }}
+              >
+                {p.label}
+              </span>
             </div>
           </div>
         ))}
@@ -183,12 +389,28 @@ function RoadmapVisual() {
 
 function SupportVisual() {
   return (
-    <div style={{ marginTop: "16px", display: "flex", justifyContent: "center", position: "relative", height: "130px" }}>
+    <div
+      style={{
+        marginTop: "16px",
+        display: "flex",
+        justifyContent: "center",
+        position: "relative",
+        height: "130px",
+      }}
+    >
       {/* Person at laptop */}
       <div style={{ position: "absolute", right: 10, bottom: 0 }}>
         <svg width="100" height="110" viewBox="0 0 100 110" fill="none">
           {/* Laptop */}
-          <rect x="15" y="70" width="70" height="38" rx="4" fill="#7c3aed" opacity="0.85" />
+          <rect
+            x="15"
+            y="70"
+            width="70"
+            height="38"
+            rx="4"
+            fill="#7c3aed"
+            opacity="0.85"
+          />
           <rect x="20" y="74" width="60" height="28" rx="2" fill="#a78bfa" />
           <rect x="10" y="108" width="80" height="3" rx="1.5" fill="#6d28d9" />
           {/* Body */}
@@ -198,12 +420,29 @@ function SupportVisual() {
           {/* Hair */}
           <path d="M41 38 Q55 24 69 38" fill="#1e1b4b" />
           {/* Headset arc */}
-          <path d="M42 40 Q55 28 68 40" stroke="#7c3aed" strokeWidth="3" fill="none" />
+          <path
+            d="M42 40 Q55 28 68 40"
+            stroke="#7c3aed"
+            strokeWidth="3"
+            fill="none"
+          />
           <rect x="40" y="38" width="5" height="8" rx="2.5" fill="#7c3aed" />
           <rect x="55" y="38" width="5" height="8" rx="2.5" fill="#7c3aed" />
           {/* Arms */}
-          <path d="M41 65 Q30 75 35 85" stroke="#fbbf24" strokeWidth="6" strokeLinecap="round" fill="none" />
-          <path d="M69 65 Q80 75 75 85" stroke="#fbbf24" strokeWidth="6" strokeLinecap="round" fill="none" />
+          <path
+            d="M41 65 Q30 75 35 85"
+            stroke="#fbbf24"
+            strokeWidth="6"
+            strokeLinecap="round"
+            fill="none"
+          />
+          <path
+            d="M69 65 Q80 75 75 85"
+            stroke="#fbbf24"
+            strokeWidth="6"
+            strokeLinecap="round"
+            fill="none"
+          />
         </svg>
       </div>
       {/* 24/7 badge */}
@@ -305,8 +544,10 @@ export default function WhatWeDo() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
-      { threshold: 0.15 }
+      ([entry]) => {
+        if (entry.isIntersecting) setVisible(true);
+      },
+      { threshold: 0.15 },
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
@@ -315,7 +556,6 @@ export default function WhatWeDo() {
   return (
     <>
       <style>{`
-  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
 
   .wwd-card {
     background: white;
@@ -412,7 +652,8 @@ export default function WhatWeDo() {
               key={i}
               className={`card-anim wwd-card ${visible ? "show" : ""}`}
               style={{
-                marginTop: i === 1 ? "60px" : i === 0 ? "28px" : i === 2 ? "14px" : "0",
+                marginTop:
+                  i === 1 ? "60px" : i === 0 ? "28px" : i === 2 ? "14px" : "0",
               }}
             >
               {/* Title */}
