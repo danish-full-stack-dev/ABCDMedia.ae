@@ -195,39 +195,6 @@ const steps = [
   },
 ];
 
-const containerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.08 } },
-};
-
-const stepVariants = {
-  hidden: { opacity: 0, x: -24 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.45, ease: "easeOut" },
-  },
-};
-
-const contentVariants = {
-  hidden: { opacity: 0, y: 18 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.42, ease: "easeOut" },
-  },
-  exit: { opacity: 0, y: -12, transition: { duration: 0.22, ease: "easeIn" } },
-};
-
-const bulletVariants = {
-  hidden: { opacity: 0, x: 16 },
-  visible: (i) => ({
-    opacity: 1,
-    x: 0,
-    transition: { delay: i * 0.07, duration: 0.35, ease: "easeOut" },
-  }),
-};
-
 export default function WebDevServices() {
   const [active, setActive] = useState(0);
   const current = steps[active];
@@ -265,7 +232,7 @@ export default function WebDevServices() {
                 lineHeight: 1.15,
               }}
             >
-              Let's unleash your{" "}
+              {"Let's"} unleash your{" "}
               <span style={{ color: "#9C27B0" }}>Web Development</span>{" "}
               potential
             </h1>
@@ -290,14 +257,20 @@ export default function WebDevServices() {
           {/* Steps sidebar */}
           <motion.div
             className="flex flex-col gap-3 w-full md:w-1/3 shrink-0"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-          >
+            initial={{}}
+            animate={{ opacity: 1 }}
+            transition={{ staggerChildren: 0.08 }}
+            >
             {steps.map((step, i) => (
               <motion.button
                 key={step.id}
-                variants={stepVariants}
+                initial={{ opacity: 0, x: -24 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{
+                  duration: 0.45,
+                  ease: "easeOut",
+                  delay: i * 0.08,
+                }}
                 onClick={() => setActive(i)}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -335,16 +308,15 @@ export default function WebDevServices() {
           </motion.div>
 
           {/* Content panel */}
-          <div className="flex-1 min-h-96 " style={{ position: "relative" }}>
+          <div className="flex-1 min-h-96 bg-white " style={{ position: "relative" }}>
             <AnimatePresence mode="wait">
               <motion.div
                 key={current.id}
-                variants={contentVariants}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
+                initial={{ opacity: 0, y: 18 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -12 }}
+                transition={{ duration: 0.42, ease: "easeOut" }}
                 style={{
-                  background: "#fff",
                   borderRadius: 12,
                   padding: "2.5rem",
                   boxShadow:
@@ -423,9 +395,13 @@ export default function WebDevServices() {
                     <motion.li
                       key={i}
                       custom={i}
-                      variants={bulletVariants}
-                      initial="hidden"
-                      animate="visible"
+                      initial={{ opacity: 0, x: 16 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{
+                        duration: 0.45,
+                        ease: "easeOut",
+                        delay: i * 0.08,
+                      }}
                       style={{
                         display: "flex",
                         alignItems: "flex-start",
