@@ -40,146 +40,158 @@ const steps = [
   {
     id: 2,
     label: "Second Step",
-    title: "Strategise",
-    heading: "Strategise",
+    title: "Design",
+    heading: "Design",
     description:
-      "We craft a bespoke strategy tailored to your goals, audience, and competitive landscape. Every decision is data-backed and designed to maximise your return on ad spend.",
-    subheading: "Our strategy phase covers:",
+      "We create stunning, user-centric designs that align with your brand identity and business objectives. Our design phase ensures optimal user experience and conversion pathways.",
+    subheading: "Our design phase covers:",
     bullets: [
       {
-        bold: "Campaign architecture",
-        text: "Structuring campaigns for clarity and control",
+        bold: "Wireframing & prototyping",
+        text: "Planning layout and user flows",
       },
       {
-        bold: "Audience segmentation",
-        text: "Precise targeting based on research insights",
+        bold: "Visual design",
+        text: "Crafting beautiful, on-brand interfaces",
       },
       {
-        bold: "Budget allocation",
-        text: "Optimising spend across channels and objectives",
+        bold: "Responsive design",
+        text: "Ensuring seamless experience across devices",
       },
       {
-        bold: "Creative direction",
-        text: "Aligning messaging with audience intent",
+        bold: "UX/UI best practices",
+        text: "Optimising for usability and engagement",
       },
       {
-        bold: "KPI definition",
-        text: "Setting measurable benchmarks for success",
+        bold: "Design system creation",
+        text: "Building scalable design foundations",
       },
     ],
     footer:
-      "A well-built strategy ensures every pound of ad spend is purposeful and every campaign is positioned to deliver.",
+      "Great design is the foundation of successful websites — we ensure every pixel serves user goals and business objectives.",
   },
   {
     id: 3,
     label: "Third Step",
-    title: "Analyse",
-    heading: "Analyse",
+    title: "Development",
+    heading: "Development",
     description:
-      "We dive deep into your campaign data to uncover opportunities, inefficiencies, and trends that shape smarter decisions.",
-    subheading: "Our analysis phase covers:",
+      "We build robust, scalable websites using the latest technologies and best practices. Our development process ensures fast, secure, and maintainable code.",
+    subheading: "Our development phase covers:",
     bullets: [
       {
-        bold: "Performance audits",
-        text: "Examining historical campaign data",
+        bold: "Frontend development",
+        text: "Building responsive, interactive interfaces",
       },
       {
-        bold: "Funnel analysis",
-        text: "Identifying drop-off points and conversion blockers",
+        bold: "Backend development",
+        text: "Creating powerful server-side systems",
       },
       {
-        bold: "Attribution modelling",
-        text: "Understanding which channels drive results",
+        bold: "Database architecture",
+        text: "Designing efficient data structures",
       },
       {
-        bold: "Cohort reporting",
-        text: "Tracking behaviour across audience segments",
+        bold: "API integration",
+        text: "Connecting services and platforms seamlessly",
       },
       {
-        bold: "Insight extraction",
-        text: "Turning raw numbers into actionable intelligence",
+        bold: "Performance optimization",
+        text: "Ensuring lightning-fast load times",
       },
     ],
     footer:
-      "Deep analysis separates reactive marketers from proactive ones — we ensure you're always ahead of the curve.",
+      "Expert development transforms designs into fully functional digital experiences — we build for performance, security, and scalability.",
   },
   {
     id: 4,
     label: "Fourth Step",
-    title: "Optimise",
-    heading: "Optimise",
+    title: "Testing",
+    heading: "Testing",
     description:
-      "We continuously refine campaigns to squeeze out every drop of performance, reducing waste and scaling what works.",
-    subheading: "Our optimisation phase covers:",
+      "We rigorously test every aspect of your website to ensure quality, functionality, and security across all devices and browsers.",
+    subheading: "Our testing phase covers:",
     bullets: [
       {
-        bold: "Bid management",
-        text: "Real-time adjustments to maximise efficiency",
+        bold: "Functional testing",
+        text: "Verifying all features work as intended",
       },
-      { bold: "Ad copy testing", text: "A/B and multivariate experiments" },
       {
-        bold: "Landing page refinement",
-        text: "Improving conversion rates post-click",
+        bold: "Cross-browser testing",
+        text: "Ensuring compatibility everywhere",
       },
-      { bold: "Audience pruning", text: "Removing low-value segments" },
       {
-        bold: "Budget reallocation",
-        text: "Shifting spend toward top performers",
+        bold: "Performance testing",
+        text: "Validating speed and load capacity",
+      },
+      {
+        bold: "Security testing",
+        text: "Identifying and fixing vulnerabilities",
+      },
+      {
+        bold: "User acceptance testing",
+        text: "Gathering stakeholder feedback",
       },
     ],
     footer:
-      "Optimisation is never a one-time task — it's the engine that keeps your campaigns compounding in performance.",
+      "Thorough testing ensures your website launches confidently — we catch issues before your users do.",
   },
   {
     id: 5,
     label: "Fifth Step",
-    title: "Review",
-    heading: "Review",
+    title: "Launch",
+    heading: "Launch",
     description:
-      "Regular strategic reviews ensure your campaigns evolve alongside your business goals, market conditions, and audience behaviour.",
-    subheading: "Our review phase covers:",
+      "We manage a smooth, coordinated website launch with comprehensive deployment planning, monitoring, and post-launch support.",
+    subheading: "Our launch phase covers:",
     bullets: [
       {
-        bold: "Monthly performance reviews",
-        text: "Deep dives into what's working",
+        bold: "Deployment planning",
+        text: "Coordinating the go-live process",
       },
       {
-        bold: "Quarterly strategy sessions",
-        text: "Reassessing goals and priorities",
+        bold: "DNS & hosting setup",
+        text: "Configuring infrastructure for reliability",
       },
-      { bold: "Competitor benchmarking", text: "Staying ahead in your market" },
-      { bold: "Channel expansion", text: "Exploring new growth opportunities" },
+      { bold: "Final QA checks", text: "Last-minute verification and fixes" },
+      { bold: "Monitoring & alerts", text: "Catching issues in real-time" },
       {
-        bold: "Team alignment",
-        text: "Keeping stakeholders informed and confident",
+        bold: "Team training",
+        text: "Empowering your team to manage the site",
       },
     ],
     footer:
-      "Reviews keep campaigns sharp and ensure your investment continues to grow with you.",
+      "A well-executed launch sets your website up for success — we ensure smooth delivery and immediate support.",
   },
   {
     id: 6,
     label: "Final Step",
-    title: "Report",
-    heading: "Report",
+    title: "Support & Maintenance",
+    heading: "Support & Maintenance",
     description:
-      "Transparent, clear reporting gives you full visibility into performance — no jargon, no black boxes, just honest results.",
-    subheading: "Our reporting covers:",
+      "We provide ongoing support and maintenance to keep your website secure, updated, and performing optimally throughout its lifecycle.",
+    subheading: "Our support phase covers:",
     bullets: [
       {
-        bold: "Custom dashboards",
-        text: "Tailored to the metrics you care about",
+        bold: "Regular backups",
+        text: "Protecting your data and content",
       },
-      { bold: "Plain-English summaries", text: "No jargon, always actionable" },
-      { bold: "ROI tracking", text: "Clear attribution from spend to revenue" },
       {
-        bold: "Trend analysis",
-        text: "Month-over-month and year-over-year context",
+        bold: "Security updates",
+        text: "Keeping systems patched and protected",
       },
-      { bold: "Next-step recommendations", text: "Always forward-looking" },
+      {
+        bold: "Performance monitoring",
+        text: "Tracking health and speed metrics",
+      },
+      {
+        bold: "Content management",
+        text: "Helping you update and manage your site",
+      },
+      { bold: "Technical support", text: "Available when you need us" },
     ],
     footer:
-      "You'll always know exactly how your campaigns are performing and what we're doing next.",
+      "Long-term support ensures your website remains secure, fast, and effective — we're here for you every step of the way.",
   },
 ];
 
@@ -216,7 +228,7 @@ const bulletVariants = {
   }),
 };
 
-export default function SocialAdsApproach() {
+export default function WebDevServices() {
   const [active, setActive] = useState(0);
   const current = steps[active];
 
@@ -246,17 +258,7 @@ export default function SocialAdsApproach() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="flex flex-col md:flex-row md:items-start md:justify-between gap-6"
         >
-          <div>
-            <p
-              style={{
-                color: "#9C27B0",
-                fontWeight: 500,
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-              }}
-            >
-              Our Approach
-            </p>
+          <div className="mx-auto">
             <h1
               className="mt-1 text-5xl font-bold"
               style={{
@@ -264,7 +266,8 @@ export default function SocialAdsApproach() {
               }}
             >
               Let's unleash your{" "}
-              <span style={{ color: "#9C27B0" }}>Social Ads</span> potential
+              <span style={{ color: "#9C27B0" }}>Web Development</span>{" "}
+              potential
             </h1>
           </div>
           <p
@@ -276,9 +279,9 @@ export default function SocialAdsApproach() {
               paddingTop: "0.5rem",
             }}
           >
-            Our UK-based Google Ads Agency has steered thousands of successful
-            campaigns, managing an annual ad spend of over £20 million. Want to
-            speak with our specialists?
+            Our UK-based Web Development Agency has delivered hundreds of
+            high-performance websites, specialising in custom design and
+            development. Ready to transform your digital presence?
           </p>
         </motion.div>
 
@@ -308,7 +311,7 @@ export default function SocialAdsApproach() {
                 }}
               >
                 <span
-                className={`${active === i ? "text-white" : "text-gray-500"}`}
+                  className={`${active === i ? "text-white" : "text-gray-500"}`}
                   style={{
                     fontSize: "0.8rem",
                     fontWeight: 400,

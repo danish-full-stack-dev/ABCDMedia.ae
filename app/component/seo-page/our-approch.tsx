@@ -144,15 +144,12 @@ export const ApproachSection: React.FC = () => {
   return (
     <section
       style={{
-        fontFamily: "'DM Sans', sans-serif",
         background: "#fff",
         padding: "80px 0 100px",
         overflow: "hidden",
       }}
     >
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap');
-
         @keyframes fadeUp {
           from { opacity: 0; transform: translateY(30px); }
           to   { opacity: 1; transform: translateY(0); }
@@ -202,7 +199,6 @@ export const ApproachSection: React.FC = () => {
             </p>
             <h2
               style={{
-                fontFamily: "'Bricolage Grotesque', sans-serif",
                 fontSize: "clamp(32px, 3.5vw, 50px)",
                 fontWeight: 800,
                 color: "#111",

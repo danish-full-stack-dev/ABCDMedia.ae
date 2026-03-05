@@ -28,7 +28,7 @@ export default function ExpertiseBanner() {
         />
 
         {/* ===== LEFT: Text ===== */}
-        <div className="relative z-20 flex flex-col w-10/12 flex-shrink-0 ">
+        <div className="relative z-20 flex flex-col w-1/2 flex-shrink-0 ">
           <h2
             className="text-white font-bold leading-tight mb-5"
             style={{ fontSize: "clamp(1.6rem, 3vw, 2.4rem)" }}
@@ -56,13 +56,9 @@ export default function ExpertiseBanner() {
 
         {/* ===== RIGHT: Image ===== */}
         <div
-          className="relative z-10 flex-shrink-0 
-                       w-[200px] h-[200px] 
-                       sm:w-[260px] sm:h-[260px] 
-                       md:w-[320px] md:h-[320px] 
-                       lg:w-[380px] lg:h-[380px] 
-                       -mr-4 -mb-12"
-        >
+          className="relative z-10 shrink-0 
+          w-100 h-100 mt-10 md:mt-0"
+          >
           <Image
             src="/expertise-sec-bg.png"
             alt="Einstein character"

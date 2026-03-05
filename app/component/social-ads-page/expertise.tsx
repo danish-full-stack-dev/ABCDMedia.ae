@@ -5,8 +5,8 @@ import Link from "next/link";
 
 export default function ExpertiseBanner() {
   return (
-    <section className="relative w-full py-10 overflow-hidden bg-black">
-      <div className="relative w-10/12 mx-auto flex flex-col md:flex-row items-center justify-between px-6 py-2">
+    <section className="relative w-full py-6 overflow-hidden bg-black">
+      <div className="relative max-w-10/12 w-full mx-auto flex flex-col md:flex-row items-center justify-between px-6 py-10">
         <div
           className="absolute inset-0"
           style={{
@@ -28,20 +28,21 @@ export default function ExpertiseBanner() {
         />
 
         {/* ===== LEFT: Text ===== */}
-        <div className="relative z-20 flex flex-col w-2/3 shrink-0 ">
+        <div className="relative z-20 flex flex-col w-10/12 flex-shrink-0 ">
           <h2
             className="text-white font-bold leading-tight mb-5"
             style={{ fontSize: "clamp(1.6rem, 3vw, 2.4rem)" }}
           >
-            Have a <span className="text-[#C026D3]">Project?</span> Let’s
-            Discuss
+            Our <span className="text-[#C026D3]">Google Ads Expertise?</span>{" "}
+            Think Einstein. Your
+            <br />
+            Breakthroughs? Pure Genius
           </h2>
 
           <p className="text-gray-400 text-sm leading-relaxed mb-8 max-w-md">
-            Let’s elevate your digital presence with a website that speaks your
-            brand the way you want. From custom web development services, you
-            can have a digital portfolio, corporate website, or an online store.
-            Convert your ideas, and designs into a functional dynamic website.
+            We save our users an average of 23.5% on their Google Ads Spend,
+            increase their conversions, help them scale their campaigns AND
+            still find time for lunch.
           </p>
 
           <Link
@@ -56,24 +57,20 @@ export default function ExpertiseBanner() {
         {/* ===== RIGHT: Image ===== */}
         <div
           className="relative z-10 flex-shrink-0 
-                w-[260px] 
-                sm:w-[320px] 
-                md:w-[380px] 
-                lg:w-[450px] 
-                xl:w-[500px]"
+                       w-[200px] h-[200px] 
+                       sm:w-[260px] sm:h-[260px] 
+                       md:w-[320px] md:h-[320px] 
+                       lg:w-[380px] lg:h-[380px] 
+                       -mr-4 -mb-12"
         >
           <Image
-            src="/question.png"
+            src="/expertise-sec-bg.png"
             alt="Einstein character"
-            width={500}
-            height={500}
-            className="object-contain"
+            fill
+            className="object-contain object-bottom"
             style={{
-              filter: "drop-shadow(0 0 35px rgba(156,39,176,0.25))",
-              height: "auto",
-              width: "100%",
+              filter: "drop-shadow(0 0 30px rgba(156,39,176,0.2))",
             }}
-            priority
           />
         </div>
       </div>

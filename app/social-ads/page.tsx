@@ -4,8 +4,11 @@ import Contact from "../component/social-ads-page/contact";
 import WhyChooseUs from "../component/social-ads-page/whychoose";
 import ApproachSection from "../component/social-ads-page/our-approch";
 import StrategyCallSection from "../component/social-ads-page/strategy-call-section";
-import TestimonialsSection from "../component/social-ads-page/testimonials";
 import DidYouKnow from "../component/social-ads-page/didYouKnow";
+import ExpertiseBanner from "../component/social-ads-page/expertise";
+import PricingSection from "../component/social-ads-page/pricing-section";
+import GoogleTestimonialsSection from "../component/generic/google-testimonials";
+import TrustpilotTestimonialsSection from "../component/generic/turstpilot-testimonials";
 
 export default function page() {
   return (
@@ -14,9 +17,12 @@ export default function page() {
       <DidYouKnow />
       <WhyChooseUs />
       <ApproachSection />
+      <ExpertiseBanner />
+      <PricingSection />
       <StrategyCallSection />
       <FAQSection />
-      <TestimonialsSection />
+      <GoogleTestimonialsSection />
+      <TrustpilotTestimonialsSection/>
       <Contact />
     </div>
   );

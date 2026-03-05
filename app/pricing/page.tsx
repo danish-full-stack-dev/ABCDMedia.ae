@@ -5,6 +5,8 @@ import FAQSection from "../component/pricing-page/FAQ-section";
 import PricingComparisonTable from "../component/pricing-page/comparison-table";
 import Contact from "../component/pricing-page/contact";
 import StrategyCallSection from "../component/pricing-page/strategy-call-section";
+import GoogleTestimonialsSection from "../component/generic/google-testimonials";
+import TrustpilotTestimonialsSection from "../component/generic/turstpilot-testimonials";
 
 export default function page() {
   return (
@@ -12,8 +14,10 @@ export default function page() {
       <Hero />
       <PricingSection />
       <PricingComparisonTable />
-      <StrategyCallSection/>
+      <StrategyCallSection />
       <FAQSection />
+      <GoogleTestimonialsSection />
+      <TrustpilotTestimonialsSection />
       <Contact />
     </div>
   );
