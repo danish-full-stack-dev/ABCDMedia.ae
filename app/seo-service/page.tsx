@@ -3,7 +3,8 @@ import Hero from "../component/seo-page/hero";
 import WhyChooseUs from "../component/seo-page/whychoose";
 import DidYouKnow from "../component/seo-page/didYouKnow";
 import FAQSection from "../component/seo-page/FAQ-section";
-import TestimonialsSection from "../component/seo-page/testimonials";
+import GoogleTestimonialsSection from "../component/generic/google-testimonials";
+import TrustpilotTestimonialsSection from "../component/generic/turstpilot-testimonials";
 import Contact from "../component/seo-page/contact";
 import ApproachSection from "../component/seo-page/our-approch";
 import InternationalSeoSection from "../component/seo-page/international-seo";
@@ -19,7 +20,8 @@ export default function page() {
       <SEOResults />
       <ApproachSection />
       <FAQSection />
-      <TestimonialsSection />
+      <GoogleTestimonialsSection />
+      <TrustpilotTestimonialsSection />
       <Contact />
     </div>
   );

@@ -2,32 +2,9 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 
-/* ─── Google Logo SVG ─────────────────────────────────────────────────────── */
-const GoogleLogo: React.FC<{ size?: number }> = ({ size = 36 }) => (
-  <svg
-    width={size}
-    height={size}
-    viewBox="0 0 48 48"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      fill="#EA4335"
-      d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"
-    />
-    <path
-      fill="#4285F4"
-      d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"
-    />
-    <path
-      fill="#FBBC05"
-      d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"
-    />
-    <path
-      fill="#34A853"
-      d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"
-    />
-    <path fill="none" d="M0 0h48v48H0z" />
-  </svg>
+/* ─── Trustpilot Logo SVG ─────────────────────────────────────────────────────── */
+const TrustpilotLogo: React.FC<{ size?: number }> = ({ size = 36 }) => (
+  <img src="trustpilot.png" alt="Trustpilot Logo" width={size} height={size} />
 );
 
 /* ─── Quote bubble icon ───────────────────────────────────────────────────── */
@@ -43,7 +20,7 @@ const QuoteBubble: React.FC = () => (
 const Stars: React.FC<{ count?: number }> = ({ count = 5 }) => (
   <div className="flex items-center gap-1">
     {Array.from({ length: count }).map((_, i) => (
-      <svg key={i} width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B">
+      <svg key={i} width="18" height="18" viewBox="0 0 24 24" fill="#00b77f">
         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
       </svg>
     ))}
@@ -65,7 +42,7 @@ const testimonials: Testimonial[] = [
     date: "24 October, 2025",
     rating: 5,
     review:
-      "[ABCD MEDIA] managed to cut through the noise and help us stand out from our competitors, restoring our faith in Google Ads. Thank you!",
+      "[ABCD MEDIA] managed to cut through the noise and help us stand out from our competitors, restoring our faith in Trustpilot Ads. Thank you!",
     avatar: "https://randomuser.me/api/portraits/women/44.jpg",
   },
   {
@@ -73,7 +50,7 @@ const testimonials: Testimonial[] = [
     date: "23 October, 2025",
     rating: 5,
     review:
-      "[ABCD MEDIA] managed to cut through the noise and help us stand out from our competitors, restoring our faith in Google Ads. Thank you!",
+      "[ABCD MEDIA] managed to cut through the noise and help us stand out from our competitors, restoring our faith in Trustpilot Ads. Thank you!",
     avatar: "https://randomuser.me/api/portraits/men/32.jpg",
   },
   {
@@ -81,7 +58,7 @@ const testimonials: Testimonial[] = [
     date: "21 October, 2025",
     rating: 5,
     review:
-      "Outstanding results! Our ROI tripled within the first month. The team's expertise in Google Ads is truly unmatched in the industry.",
+      "Outstanding results! Our ROI tripled within the first month. The team's expertise in Trustpilot Ads is truly unmatched in the industry.",
     avatar: "https://randomuser.me/api/portraits/women/68.jpg",
   },
   {
@@ -114,9 +91,9 @@ const testimonials: Testimonial[] = [
 const TestimonialCard: React.FC<{ t: Testimonial }> = ({ t }) => (
   <div className="relative bg-white rounded-2xl p-7 shadow-sm border md:min-w-[50svh] min-w-[35svh] border-gray-100 shrink-0 flex flex-col gap-4 hover:-translate-y-1 hover:shadow-xl hover:shadow-purple-100/60 transition-all duration-300">
     {/* Quote bubble — top right */}
-    <div className="absolute -top-4 right-6">
+    {/* <div className="absolute -top-4 right-6">
       <QuoteBubble />
-    </div>
+    </div> */}
 
     {/* Stars + rating */}
     <div className="flex items-center gap-3 pt-2">
@@ -126,7 +103,9 @@ const TestimonialCard: React.FC<{ t: Testimonial }> = ({ t }) => (
 
     {/* Review text */}
     <p className="text-gray-700 text-[15px] leading-relaxed flex-1">
-      {t.review}
+      {t.review.split(" ").length > 20
+        ? t.review.split(" ").slice(0, 20).join(" ") + "..."
+        : t.review}
     </p>
 
     {/* Divider */}
@@ -149,7 +128,7 @@ const TestimonialCard: React.FC<{ t: Testimonial }> = ({ t }) => (
           <p className="text-gray-400 text-xs">{t.date}</p>
         </div>
       </div>
-      <GoogleLogo size={32} />
+      <TrustpilotLogo size={100} />
     </div>
   </div>
 );
@@ -182,7 +161,7 @@ const ScrollBtn: React.FC<{ dir: "left" | "right"; onClick: () => void }> = ({
 );
 
 /* ─── Main Section ────────────────────────────────────────────────────────── */
-export const TestimonialsSection: React.FC = () => {
+export const TrustpilotTestimonialsSection: React.FC = () => {
   const [index, setIndex] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -200,14 +179,14 @@ export const TestimonialsSection: React.FC = () => {
   };
 
   return (
-    <section className="relative w-full py-20 overflow-hidden bg-linear-to-b from-white via-purple-50/30 to-white">
+    <section className="relative w-full pb-10 overflow-hidden bg-white">
       {/* Decorative background blobs */}
       <div className="absolute top-10 left-1/4 w-72 h-72 bg-purple-100/50 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 right-1/4 w-64 h-64 bg-pink-100/40 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="relative z-10 max-w-9/12 mx-auto px-6">
+      <div className="relative z-10 max-w-10/12 mx-auto overflow-hidden">
         {/* Header */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -220,7 +199,7 @@ export const TestimonialsSection: React.FC = () => {
         </motion.div>
 
         {/* Scroll controls */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -229,26 +208,25 @@ export const TestimonialsSection: React.FC = () => {
         >
           <ScrollBtn dir="left" onClick={() => scroll("left")} />
           <ScrollBtn dir="right" onClick={() => scroll("right")} />
-        </motion.div>
+        </motion.div> */}
 
         {/* Cards track */}
         <div className="relative">
           {/* Left fade */}
-          <div className="absolute left-0 top-0 bottom-0 w-16 bg-linear-to-r from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-16 bg-linear-to-r from-white via-white to-transparent z-10 pointer-events-none" />
           {/* Right fade */}
-          <div className="absolute right-0 top-0 bottom-0 w-16 bg-linear-to-l from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 bg-linear-to-r from-transparent via-white to-white z-10 pointer-events-none" />
 
           <motion.div
             ref={scrollRef}
-            className="flex gap-6 overflow-x-auto py-6 scroll-smooth"
-            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            className="flex gap-6 py-6 h-auto"
+            initial={{ x: "-100%" }}
+            animate={{ x: "0%" }}
             transition={{
-              duration: 0.6,
               delay: 0.15,
-              ease: [0.22, 1, 0.36, 1],
+              duration: 20,
+              ease: "linear",
+              repeat: Infinity,
             }}
           >
             {/* Partial left peek card (ghost) */}
@@ -270,6 +248,8 @@ export const TestimonialsSection: React.FC = () => {
               </motion.div>
             ))}
 
+            {/* Duplicate testimonials for infinite scroll */}
+
             {/* Partial right peek spacer */}
             <div className="shrink-0 md:w-10 w-0" />
           </motion.div>
@@ -282,7 +262,7 @@ export const TestimonialsSection: React.FC = () => {
         </div>
 
         {/* Dots indicator */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -303,10 +283,10 @@ export const TestimonialsSection: React.FC = () => {
               className={`h-1.5 rounded-full transition-all duration-300 ${index === i ? "w-8 bg-[#9C27B0]" : "w-1.5 bg-gray-300 hover:bg-[#9C27B0]/70"}`}
             />
           ))}
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );
 };
 
-export default TestimonialsSection;
+export default TrustpilotTestimonialsSection;

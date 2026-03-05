@@ -27,16 +27,19 @@ export default function InternationalSeoSection() {
               "We dedicate full time to understand your unique goal and craft a robust, scalable tailor-made strategy.",
           },
         ].map((card, idx) => (
-          <div key={idx} className="flex flex-col p-8 rounded-2xl shadow-2xl gap-5">
+          <div
+            key={idx}
+            className="flex flex-col p-8 rounded-2xl shadow-2xl gap-5"
+          >
             <div className="flex justify-between items-center">
-              <card.icon className="text-[#9C27B0] font-thin h-20 w-20" />
-              <h3 className="text-8xl text-[#9C27B0]/20 font-semibold">
+              <card.icon className="text-[#9C27B0] font-thin h-16 w-14" />
+              <h3 className="text-7xl text-[#9C27B0]/20 font-semibold">
                 0{idx + 1}
               </h3>
             </div>
             <div className="flex flex-col gap-2">
-              <h3 className="text-2xl font-semibold">{card.heading}</h3>
-              <p className="text-xl">{card.description}</p>
+              <h3 className="text-xl font-semibold">{card.heading}</h3>
+              <p className="text-lg">{card.description}</p>
             </div>
           </div>
         ))}

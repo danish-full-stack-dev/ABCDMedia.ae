@@ -1,12 +1,28 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { Calendar, PencilRuler, SlidersHorizontal, Code2 } from "lucide-react";
 
 const steps = [
   { title: "Discovery & Strategy", desc: "Call", icon: Calendar, side: "left" },
-  { title: "Design Sprint", desc: "UI/UX in Figma", icon: PencilRuler, side: "right" },
-  { title: "Agile Development", desc: "(web / mobile MVP)", icon: SlidersHorizontal, side: "left" },
-  { title: "Launch & Learn", desc: "(live feedback, iterate)", icon: Code2, side: "right" },
+  {
+    title: "Design Sprint",
+    desc: "UI/UX in Figma",
+    icon: PencilRuler,
+    side: "right",
+  },
+  {
+    title: "Agile Development",
+    desc: "(web / mobile MVP)",
+    icon: SlidersHorizontal,
+    side: "left",
+  },
+  {
+    title: "Launch & Learn",
+    desc: "(live feedback, iterate)",
+    icon: Code2,
+    side: "right",
+  },
 ];
 
 export default function HowWeDo() {
@@ -14,14 +30,17 @@ export default function HowWeDo() {
     <>
       <style>{`
         .timeline-card {
-          background: white;
           border-radius: 20px;
           padding: 28px 24px 20px;
-          box-shadow: 0 4px 24px rgba(0,0,0,0.07);
           transition: all 0.4s ease;
           overflow: hidden;
           position: relative;
           z-index: 20;
+          border-bottom: 1px solid #9934C1;
+          border-left: 1px solid #9934C1;
+          background: linear-gradient(to right, transparent 0%, #9934C1 100%) 0 0 / 30% 1px no-repeat;
+          background: linear-gradient(to bottom,, transparent 0%, #9934C1 100%) 100 100 / 50% 1px no-repeat;
+
         }
 
         .timeline-card::before {
@@ -58,30 +77,53 @@ export default function HowWeDo() {
 
       <section className="relative bg-[#f5f5f7] py-28 overflow-hidden">
         <div className="w-10/12 mx-auto relative">
-
           {/* Heading */}
           <div className="flex justify-center mb-28">
-            <div className="px-8 py-3 border border-[#9934C1] rounded-full text-3xl font-semibold text-black">
-              How <span className="text-[#CB30E0]">we do</span>
+            <div className="px-8 py-3 border border-[#9934C1] rounded-full text-5xl font-semibold text-black">
+              How <span className="text-[#9934C1]">we do</span>
             </div>
           </div>
 
           {/* Center Line */}
           <div className="absolute left-1/2 top-40 bottom-0 w-[2px] bg-[#e5d0f5] -translate-x-1/2 z-0"></div>
 
-          <div className="space-y-40 relative">
-
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: {
+                  staggerChildren: 0.2,
+                  delayChildren: 0.1,
+                },
+              },
+            }}
+            className="space-y-20 relative"
+          >
             {steps.map((step, index) => {
               const Icon = step.icon;
               const isLeft = step.side === "left";
 
               return (
-                <div key={index} className="relative flex items-center justify-center">
-
+                <motion.div
+                  key={index}
+                  variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    visible: {
+                      opacity: 1,
+                      y: 0,
+                      transition: { duration: 0.5, ease: "easeOut" },
+                    },
+                  }}
+                  className="relative flex items-center justify-center"
+                >
                   {isLeft && (
                     <div className="absolute left-1/2 -translate-x-[130%] w-[30%] z-20">
                       <div className="timeline-card">
-                        <span className="text-xs font-medium text-[#CB30E0]">
+                        <span className="text-xs font-semibold text-[#CB30E0]">
                           Step {index + 1}
                         </span>
                         <h4 className="font-semibold text-lg mt-2 text-black">
@@ -95,9 +137,11 @@ export default function HowWeDo() {
                   )}
 
                   {/* ICON */}
-                  <div className="relative z-30 w-16 h-16 flex items-center justify-center 
+                  <div
+                    className="relative z-30 w-16 h-16 flex items-center justify-center 
                                   rounded-full bg-gradient-to-br 
-                                  from-[#263238] to-[#9934C1] text-white shadow-lg">
+                                  from-[#9934C1] to-[#9934C1] text-white shadow-lg"
+                  >
                     <Icon size={24} />
                   </div>
 
@@ -141,11 +185,10 @@ export default function HowWeDo() {
                       />
                     )}
                   </svg>
-
-                </div>
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
         </div>
       </section>
     </>

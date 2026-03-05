@@ -622,18 +622,14 @@ export default function WhatWeDo() {
         }}
       >
         {/* Heading */}
-        <h2
+        <h2 className="text-5xl text-black"
           style={{
             textAlign: "center",
-            fontFamily: "'Syne', sans-serif",
-            fontWeight: 800,
-            fontSize: "clamp(28px, 3.5vw, 44px)",
-            color: "#0f172a",
             marginBottom: "56px",
             letterSpacing: "-0.5px",
           }}
         >
-          What <span style={{ color: "#c026d3" }}>we do</span>
+          What <span style={{ color: "#9934C1" }}>we do</span>
         </h2>
 
         {/* Cards grid */}

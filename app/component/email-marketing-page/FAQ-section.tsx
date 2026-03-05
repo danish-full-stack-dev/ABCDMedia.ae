@@ -44,27 +44,26 @@ export default function FAQSection() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center py-24 bg-white text-black">
+    <div className="flex flex-col justify-center items-center py-24 bg-slate-100 text-black">
       <h2 className="text-5xl font-semibold font-sans mb-10">
         Frequently Asked <span className="text-[#9C27B0]"> Questions</span>
       </h2>
-      <div className="space-y-6 max-w-6xl w-full mx-auto">
-        {faqs.map((reason, idx) => (
+      <div className="space-y-6 max-w-5xl w-full mx-auto">
+        {faqs.map((faq) => (
           <div
-            key={idx}
-            className="bg-slate-100 rounded-2xl w-full px-6 py-10 cursor-pointer transition duration-300"
-            onClick={() => toggle(reason.id)}
+            key={faq.id}
+            className="rounded-2xl w-full px-6 py-5 cursor-pointer bg-white transition duration-300"
+            onClick={() => toggle(faq.id)}
           >
             <div className="flex justify-between items-center">
               <div className="flex items-center gap-3">
-                <div className="bg-[#9C27B0] w-7 h-7 rounded-full flex items-center justify-center text-white">
-                  <Check size={16} />
-                </div>
-                <h3 className="font-semibold text-xl">{reason.question}</h3>
+                <h3 className="font-semibold text-base">{faq.question}</h3>
               </div>
 
-              <span className="text-[#9C27B0] text-xl">
-                {openId === reason.id ? (
+              <span
+                className={`text-sm p-1 rounded-full ${openId === faq.id ? "bg-[#9C27B0] text-white" : "bg-slate-100 text-[#9C27B0]"}`}
+              >
+                {openId === faq.id ? (
                   <Minus size={16} />
                 ) : (
                   <Plus size={16} />
@@ -73,15 +72,15 @@ export default function FAQSection() {
             </div>
 
             <AnimatePresence>
-              {openId === reason.id && (
+              {openId === faq.id && (
                 <motion.p
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: "auto" }}
-                  className="mt-4 text-gray-600 text-lg"
+                  className="mt-4 text-gray-600 text-base"
                   exit={{ height: 0, opacity: 0 }}
                   transition={{ duration: 0.3, ease: "easeInOut" }}
                 >
-                  {reason.answer}
+                  {faq.answer}
                 </motion.p>
               )}
             </AnimatePresence>

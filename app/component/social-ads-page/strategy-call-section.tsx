@@ -1,6 +1,6 @@
 export default function StrategyCallSection() {
   return (
-    <section className="w-full h-[80dvh] bg-slate-100 flex text-lg">
+    <section className="w-full h-[80dvh] flex text-lg">
       <div className="max-w-10/12 mx-auto my-auto flex items-center justify-between gap-16 w-full">
         {/* LEFT IMAGE */}
         <div className="w-1/2">

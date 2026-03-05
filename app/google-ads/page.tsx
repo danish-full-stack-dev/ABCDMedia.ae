@@ -6,7 +6,8 @@ import ExpertiseBanner from "../component/google-ads-page/expertise";
 import StrategyCallSection from "../component/google-ads-page/strategy-call";
 import FAQSection from "../component/google-ads-page/FAQ-section";
 import Contact from "../component/google-ads-page/contact";
-import TestimonialsSection from "../component/google-ads-page/testimonials";
+import GoogleTestimonialsSection from "../component/generic/google-testimonials";
+import TrustpilotTestimonialsSection from "../component/generic/turstpilot-testimonials";
 export default function GoogleAdsPage() {
   return (
     <div className="">
@@ -17,7 +18,8 @@ export default function GoogleAdsPage() {
       <ExpertiseBanner />
       <StrategyCallSection />
       <FAQSection />
-      <TestimonialsSection />
+      <GoogleTestimonialsSection />
+      <TrustpilotTestimonialsSection />
       <Contact />
     </div>
   );

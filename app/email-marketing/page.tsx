@@ -6,7 +6,8 @@ import WhoIsHookFor from "../component/email-marketing-page/hook-for";
 import MarketingTools from "../component/email-marketing-page/TimelineSection";
 import FAQSection from "../component/email-marketing-page/FAQ-section";
 import Contact from "../component/email-marketing-page/contact";
-import TestimonialsSection from "../component/email-marketing-page/testimonials";
+import GoogleTestimonialsSection from "../component/generic/google-testimonials";
+import TrustpilotTestimonialsSection from "../component/generic/turstpilot-testimonials";
 
 export default function EmailMarketingPage() {
   return (
@@ -18,7 +19,9 @@ export default function EmailMarketingPage() {
       <WhoIsHookFor />
       <MarketingTools />
       <FAQSection />
-      <TestimonialsSection />
+
+      <GoogleTestimonialsSection />
+      <TrustpilotTestimonialsSection />
       <Contact />
     </div>
   );

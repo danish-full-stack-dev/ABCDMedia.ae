@@ -126,7 +126,9 @@ const TestimonialCard: React.FC<{ t: Testimonial }> = ({ t }) => (
 
     {/* Review text */}
     <p className="text-gray-700 text-[15px] leading-relaxed flex-1">
-      {t.review}
+      {t.review.split(" ").length > 20
+        ? t.review.split(" ").slice(0, 20).join(" ") + "..."
+        : t.review}
     </p>
 
     {/* Divider */}
@@ -182,7 +184,7 @@ const ScrollBtn: React.FC<{ dir: "left" | "right"; onClick: () => void }> = ({
 );
 
 /* ─── Main Section ────────────────────────────────────────────────────────── */
-export const TestimonialsSection: React.FC = () => {
+export const GoogleTestimonialsSection: React.FC = () => {
   const [index, setIndex] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -200,12 +202,12 @@ export const TestimonialsSection: React.FC = () => {
   };
 
   return (
-    <section className="relative w-full py-20 overflow-hidden bg-linear-to-b from-white via-purple-50/30 to-white">
+    <section className="relative w-full pt-20 pb-10 overflow-hidden bg-white">
       {/* Decorative background blobs */}
       <div className="absolute top-10 left-1/4 w-72 h-72 bg-purple-100/50 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 right-1/4 w-64 h-64 bg-pink-100/40 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="relative z-10 max-w-9/12 mx-auto px-6">
+      <div className="relative z-10 max-w-10/12 mx-auto overflow-hidden">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -220,7 +222,7 @@ export const TestimonialsSection: React.FC = () => {
         </motion.div>
 
         {/* Scroll controls */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -229,26 +231,25 @@ export const TestimonialsSection: React.FC = () => {
         >
           <ScrollBtn dir="left" onClick={() => scroll("left")} />
           <ScrollBtn dir="right" onClick={() => scroll("right")} />
-        </motion.div>
+        </motion.div> */}
 
         {/* Cards track */}
         <div className="relative">
           {/* Left fade */}
-          <div className="absolute left-0 top-0 bottom-0 w-16 bg-linear-to-r from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-16 bg-linear-to-r from-white via-white to-transparent z-10 pointer-events-none" />
           {/* Right fade */}
-          <div className="absolute right-0 top-0 bottom-0 w-16 bg-linear-to-l from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 bg-linear-to-r from-transparent via-white to-white z-10 pointer-events-none" />
 
           <motion.div
             ref={scrollRef}
-            className="flex gap-6 overflow-x-auto py-6 scroll-smooth"
-            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            className="flex gap-6 py-6 h-auto"
+            initial={{ y: 16 }}
+            animate={{ x: [0, "-100%"] }}
             transition={{
-              duration: 0.6,
               delay: 0.15,
-              ease: [0.22, 1, 0.36, 1],
+              duration: 20,
+              ease: "linear",
+              repeat: Infinity,
             }}
           >
             {/* Partial left peek card (ghost) */}
@@ -270,6 +271,13 @@ export const TestimonialsSection: React.FC = () => {
               </motion.div>
             ))}
 
+            {/* Duplicate testimonials for infinite scroll */}
+            {testimonials.map((t, i) => (
+              <motion.div key={`duplicate-${i}`}>
+                <TestimonialCard t={t} />
+              </motion.div>
+            ))}
+
             {/* Partial right peek spacer */}
             <div className="shrink-0 md:w-10 w-0" />
           </motion.div>
@@ -282,7 +290,7 @@ export const TestimonialsSection: React.FC = () => {
         </div>
 
         {/* Dots indicator */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -303,10 +311,10 @@ export const TestimonialsSection: React.FC = () => {
               className={`h-1.5 rounded-full transition-all duration-300 ${index === i ? "w-8 bg-[#9C27B0]" : "w-1.5 bg-gray-300 hover:bg-[#9C27B0]/70"}`}
             />
           ))}
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );
 };
 
-export default TestimonialsSection;
+export default GoogleTestimonialsSection;
