@@ -4,8 +4,10 @@ import Image from "next/image";
 
 export default function StrategySection() {
   return (
-    <section className="w-full text-white  pb-8 min-h-screen relative">
-      <div className="w-2/3 h-full inset-0">
+    <section className="hidden sm:block w-full text-white pb-8 min-h-screen relative">
+      
+      {/* Background Image (Hidden on Mobile) */}
+      <div className=" w-2/3 h-full inset-0 ">
         <Image
           src="/ring 2.jpg"
           alt="3D Spiral"
@@ -14,20 +16,24 @@ export default function StrategySection() {
           className="object-cover absolute"
         />
       </div>
-      <div className="w-10/12 mx-auto gap-10 absolute inset-0 flex justify-start items-center">
+
+      <div className="w-11/12 md:w-10/12 mx-auto gap-10 absolute inset-0 flex flex-col md:flex-row justify-center md:justify-start items-center md:items-center pt-20 md:pt-0 ">
+
         {/* LEFT CONTENT */}
-        <div>
-          {" "} 
+        <div className="w-full">
+          
           {/* Heading */}
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight tracking-tight mb-12 md:whitespace-nowrap">
-            From Strategy to Scalable <br /> Success{" "}
+          <h2 className="text-2xl md:text-5xl lg:text-6xl font-semibold leading-tight tracking-tight mb-8 md:mb-12 text-center md:text-left md:whitespace-nowrap">
+            From Strategy to Scalable <br /> Success
           </h2>
-          {/* Content Wrapper (same width as heading) */}
-          <div className="max-w-1/2 text-lg font-sans">
+
+          {/* Content Wrapper */}
+          <div className="w-full md:max-w-1/2 text-sm md:text-lg font-sans">
+
             {/* Paragraph 1 */}
-            <div className="flex gap-6  mb-8">
+            <div className="flex gap-4 md:gap-6 mb-6 md:mb-8">
               <div className="w-2 rounded-full bg-linear-to-b from-[#731a83] to-[#9C27B0]" />
-              <p className="text-gray-300  leading-relaxed">
+              <p className="text-gray-300 text-sm md:text-base leading-relaxed">
                 We deeply analyse your market, competitors, and target audience
                 to uncover growth opportunities. This allows us to build a
                 customised, data-backed marketing plan aligned with your goals.
@@ -35,9 +41,9 @@ export default function StrategySection() {
             </div>
 
             {/* Paragraph 2 */}
-            <div className="flex gap-6 mb-8">
+            <div className="flex gap-4 md:gap-6 mb-6 md:mb-8">
               <div className="w-2 rounded-full bg-linear-to-b from-[#731a83] to-[#9C27B0]" />
-              <p className="text-gray-300  leading-relaxed">
+              <p className="text-gray-300 text-sm md:text-base leading-relaxed">
                 We launch campaigns with accurate tracking and clear performance
                 benchmarks. Through continuous testing and optimisation, we
                 improve results and reduce wasted spend.
@@ -45,9 +51,9 @@ export default function StrategySection() {
             </div>
 
             {/* Paragraph 3 */}
-            <div className="flex gap-6 mb-12">
+            <div className="flex gap-4 md:gap-6 mb-8 md:mb-12">
               <div className="w-2 rounded-full bg-linear-to-b from-[#731a83] to-[#9C27B0]" />
-              <p className="text-gray-300  leading-relaxed">
+              <p className="text-gray-300 text-sm md:text-base leading-relaxed">
                 Once campaigns generate consistent returns, we scale them
                 strategically. Our focus is maximising ROI while maintaining
                 performance efficiency.
@@ -55,20 +61,21 @@ export default function StrategySection() {
             </div>
 
             {/* Divider */}
-            <div className="h-0.5 w-full bg-[#9C27B0] mb-8"></div>
+            <div className="h-0.5 w-full bg-[#9C27B0] mb-6 md:mb-8"></div>
 
             {/* Bottom Text */}
-            <p className="text-gray-400 text-[16px] leading-relaxed font-medium text-white">
+            <p className="text-white text-xs md:text-[16px] leading-relaxed font-medium">
               ABCDMEDIA is a performance-driven digital marketing agency focused
               on measurable growth. We combine strategy, creativity, and data to
               deliver campaigns that generate real business results.
             </p>
+
           </div>
         </div>
-        {/* RIGHT IMAGE */}
-        <div className=" h-full flex items-center justify-center ">
-          {/* Make image same height as left column */}
-        </div>
+
+        {/* RIGHT IMAGE PLACEHOLDER (Desktop Only Layout) */}
+        <div className="h-full flex items-center justify-center"></div>
+
       </div>
     </section>
   );

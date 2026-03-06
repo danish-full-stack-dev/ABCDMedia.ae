@@ -1,32 +1,37 @@
-export default function StrategyCallSection() {
+export default function ScaleSection() {
   return (
-    <section className="w-full h-[80dvh] bg-slate-100 flex text-lg">
-      <div className="max-w-10/12 mx-auto my-auto flex items-center justify-between gap-16 w-full">
+    <section className="w-full min-h-[60dvh] md:min-h-[80dvh] flex text-sm sm:text-base lg:text-lg px-4 py-12 bg-slate-100">
+      <div className="max-w-[90%] mx-auto my-auto flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-16 w-full">
+
         {/* LEFT IMAGE */}
-        <div className="w-1/2">
+        <div className="  w-full lg:w-1/2">
           <img
             src="/old-man.png"
             alt="Marketing Character"
-            className="w-full object-cover bg-cover"
+            className="w-full object-cover"
           />
         </div>
 
         {/* RIGHT CONTENT */}
-        {/* RIGHT CONTENT */}
-        <div className="flex-1 text-right w-1/2">
-          <h2 className="text-5xl font-semibold leading-[1.1] tracking-tight text-[#2b2b2b]">
+        <div className="w-full lg:w-1/2 text-center lg:text-right">
+
+          {/* Heading */}
+          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-semibold leading-tight tracking-tight text-[#2b2b2b]">
             Ready to Scale Your <br />
             Business?
           </h2>
 
-          <p className="mt-6 leading-[1.8] text-[black]/70 ml-auto font-sans font-medium text-xl">
+          {/* Description */}
+          <p className="mt-4 sm:mt-6 text-xs sm:text-sm lg:text-xl leading-relaxed text-black/70 font-sans font-medium lg:ml-auto">
             Let’s turn your marketing into a powerful growth engine. Partner
             with ABCD Media and start generating measurable results today.
           </p>
 
-          <button className="mt-10 px-10 py-4 rounded-full bg-[#9a04cf] text-white text-[16px] font-semibold shadow-lg hover:opacity-90 transition-all duration-300">
+          {/* Button */}
+          <button className="mt-6 sm:mt-8 lg:mt-10 px-6 sm:px-8 lg:px-10 py-3 sm:py-4 rounded-full bg-[#9a04cf] text-white text-xs sm:text-sm lg:text-[16px] font-semibold shadow-lg hover:opacity-90 transition-all duration-300">
             Book Your Free Strategy Call Now
           </button>
+
         </div>
       </div>
     </section>
