@@ -283,14 +283,14 @@ const MobileServices = () => {
                   <div className="w-full">
                     {/* Title with Icon */}
                     <div className="flex items-start justify-between gap-3 mb-4 group">
-                      <h3 className="text-xl sm:text-2xl font-bold font-pt text-gray-900">
+                      <h3 className="text-2xl font-bold font-pt text-gray-900">
                         {service.title}
                       </h3>
                       <ArrowUpRight className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 text-gray-900" />
                     </div>
 
                     {/* Description */}
-                    <p className="text-sm sm:text-base leading-relaxed text-gray-700 mb-4">
+                   <p className="text-sm leading-relaxed text-gray-700 mb-4">
                       {service.description}
                     </p>
 
@@ -306,7 +306,7 @@ const MobileServices = () => {
                       {service.services.map((item, idx) => (
                         <li
                           key={idx}
-                          className="px-3 py-1.5 text-xs sm:text-sm text-gray-800 list-disc ml-4"
+                          className="px-3 py-1.5 text-xs text-gray-800 list-disc ml-4"
                         >
                           {item}
                         </li>

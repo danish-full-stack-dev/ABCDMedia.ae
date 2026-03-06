@@ -41,25 +41,25 @@ export default function OurApproach() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="bg-white py-20 px-6 ">
-      <div className="w-10/12  mx-auto ">
+    <section className="bg-white py-20 px-6">
+      <div className="w-10/12 mx-auto">
         {/* Top Label */}
-        <p className="text-[#9934C1] text-sm font-font-medium mb-3">
+        <p className="text-[#9934C1] text-xs md:text-sm font-medium mb-3">
           Our Approach
         </p>
 
-        <div className="flex flex-col lg:flex-row gap-16 items-start ">
+        <div className="flex flex-col lg:flex-row gap-16 items-start">
           {/* ===== LEFT: Heading + 3D Image ===== */}
-          <div className="lg:w-5/12 flex flex-col">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight mb-10 md:whitespace-nowrap ">
+          <div className="lg:w-5/12 flex flex-col w-full">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-gray-900 leading-tight md:mb-10 md:whitespace-nowrap">
               Let's unleash your{" "}
               <span className="text-[#9934C1]">Google Ads</span>
               <br />
               potential
             </h2>
 
-            {/* 3D Decorative Image */}
-            <div className="w-full flex items-center justify-center">
+            {/* 3D Decorative Image — hidden on mobile to save space */}
+            <div className="hidden md:flex w-full items-center justify-center">
               <div
                 className="relative w-full"
                 style={{ aspectRatio: "1 / 1.1", maxWidth: "800px" }}
@@ -71,7 +71,7 @@ export default function OurApproach() {
                   className="object-cover"
                   style={{
                     filter: "drop-shadow(0 8px 30px rgba(0,0,0,0.10))",
-                    objectPosition: "20% center", // <-- adjust horizontal alignment
+                    objectPosition: "20% center",
                   }}
                 />
               </div>
@@ -79,9 +79,9 @@ export default function OurApproach() {
           </div>
 
           {/* ===== RIGHT: Description + Accordion ===== */}
-          <div className="lg:w-7/12 flex flex-col">
+          <div className="lg:w-7/12 flex flex-col w-full">
             {/* Description */}
-            <p className="text-gray-500 text-base leading-relaxed mb-8 max-w-lg">
+            <p className="hidden sm:block text-gray-500 text-sm md:text-base leading-relaxed mb-6 md:mb-8 max-w-lg">
               Our UK-based Google Ads Agency has steered thousands of successful
               campaigns, managing an annual ad spend of over £20 million. What
               to speak with our specialists?
@@ -100,17 +100,16 @@ export default function OurApproach() {
                     {/* Accordion Header */}
                     <button
                       onClick={() => setOpenIndex(isOpen ? -1 : index)}
-                      className="w-full flex items-center justify-between px-5 py-4 text-left"
+                      className="w-full flex items-center justify-between px-4 md:px-5 py-3 md:py-4 text-left"
                     >
                       <div className="flex items-center gap-3">
-                        {/* Purple checkmark icon */}
                         <span
-                          className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0"
+                          className="w-6 h-6 md:w-7 md:h-7 rounded-full flex items-center justify-center flex-shrink-0"
                           style={{ background: "#9934C1" }}
                         >
                           <svg
-                            width="13"
-                            height="13"
+                            width="11"
+                            height="11"
                             viewBox="0 0 24 24"
                             fill="none"
                             stroke="white"
@@ -121,7 +120,7 @@ export default function OurApproach() {
                             <polyline points="20 6 9 17 4 12" />
                           </svg>
                         </span>
-                        <span className="font-semibold text-gray-800 text-base">
+                        <span className="font-semibold text-gray-800 text-sm md:text-base">
                           {step.title}
                         </span>
                       </div>
@@ -130,8 +129,8 @@ export default function OurApproach() {
                       <span className="text-gray-500">
                         {isOpen ? (
                           <svg
-                            width="16"
-                            height="16"
+                            width="14"
+                            height="14"
                             viewBox="0 0 24 24"
                             fill="none"
                             stroke="#9934C1"
@@ -143,8 +142,8 @@ export default function OurApproach() {
                           </svg>
                         ) : (
                           <svg
-                            width="16"
-                            height="16"
+                            width="14"
+                            height="14"
                             viewBox="0 0 24 24"
                             fill="none"
                             stroke="currentColor"
@@ -169,7 +168,7 @@ export default function OurApproach() {
                           transition={{ duration: 0.3, ease: "easeInOut" }}
                           className="overflow-hidden"
                         >
-                          <p className="px-5 pb-5 text-gray-500 text-sm leading-relaxed">
+                          <p className="px-4 md:px-5 pb-4 md:pb-5 text-gray-500 text-xs md:text-sm leading-relaxed">
                             {step.content}
                           </p>
                         </motion.div>

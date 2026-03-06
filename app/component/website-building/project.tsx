@@ -20,7 +20,7 @@ export default function ExpertiseBanner() {
 
         {/* Purple glow */}
         <div
-          className="absolute left-0 top-0 bottom-0 w-1/2 opacity-20 "
+          className="absolute left-0 top-0 bottom-0 w-1/2 opacity-20"
           style={{
             background:
               "radial-gradient(ellipse 80% 100% at 20% 50%, rgba(140, 30, 180, 0.6) 0%, transparent 70%)",
@@ -28,17 +28,16 @@ export default function ExpertiseBanner() {
         />
 
         {/* ===== LEFT: Text ===== */}
-        <div className="relative z-20 flex flex-col w-2/3 shrink-0 ">
+        <div className="relative z-20 flex flex-col w-full md:w-2/3 shrink-0">
           <h2
-            className="text-white font-bold leading-tight mb-5"
-            style={{ fontSize: "clamp(1.6rem, 3vw, 2.4rem)" }}
+            className="text-white font-bold leading-tight mb-4 md:mb-5 text-2xl md:text-[clamp(1.6rem,3vw,2.4rem)]"
           >
-            Have a <span className="text-[#C026D3]">Project?</span> Let’s
+            Have a <span className="text-[#C026D3]">Project?</span> Let's
             Discuss
           </h2>
 
-          <p className="text-gray-400 text-sm leading-relaxed mb-8 max-w-md">
-            Let’s elevate your digital presence with a website that speaks your
+          <p className=" hidden sm:blocktext-gray-400 text-xs md:text-sm leading-relaxed mb-6 md:mb-8 max-w-md">
+            Let's elevate your digital presence with a website that speaks your
             brand the way you want. From custom web development services, you
             can have a digital portfolio, corporate website, or an online store.
             Convert your ideas, and designs into a functional dynamic website.
@@ -46,20 +45,20 @@ export default function ExpertiseBanner() {
 
           <Link
             href="/pricing"
-            className="inline-flex items-center justify-center px-10 py-4 rounded-full font-semibold text-white text-sm transition-all duration-300 hover:opacity-90 hover:scale-105 w-fit"
+            className="inline-flex items-center justify-center px-10 py-4 rounded-full font-semibold text-white text-sm transition-all duration-300 hover:opacity-90 hover:scale-105 w-full md:w-fit text-center"
             style={{ background: "#9C27B0" }}
           >
             View Our Pricing
           </Link>
         </div>
 
-        {/* ===== RIGHT: Image ===== */}
+        {/* ===== RIGHT: Image — hidden on mobile ===== */}
         <div
-          className="relative z-10 flex-shrink-0 
-                w-[260px] 
-                sm:w-[320px] 
-                md:w-[380px] 
-                lg:w-[450px] 
+          className="hidden md:block relative z-10 flex-shrink-0
+                w-[260px]
+                sm:w-[320px]
+                md:w-[380px]
+                lg:w-[450px]
                 xl:w-[500px]"
         >
           <Image

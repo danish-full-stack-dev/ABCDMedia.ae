@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+
 interface Plan {
   price: string;
   priceSub?: string;
@@ -98,29 +99,32 @@ const CheckIcon: React.FC = () => (
 );
 
 /* ─── Single Plan Card ────────────────────────────────────────────────────── */
-const PlanCard: React.FC<{ plan: Plan; index: number }> = ({ plan, index }) => {
+const PlanCard: React.FC<{ plan: Plan; index: number; mobile?: boolean }> = ({
+  plan,
+  index,
+  mobile = false,
+}) => {
   const [hovered, setHovered] = React.useState(false);
 
   const cardStyle: React.CSSProperties = plan.featured
     ? {
         position: "relative",
         background: "#111111",
-        borderRadius: 28,
-        padding: "48px 34px 52px",
+        borderRadius: mobile ? 20 : 28,
+        padding: mobile ? "28px 20px 32px" : "48px 34px 52px",
         zIndex: 2,
-        margin: "-20px -14px",
+        margin: mobile ? "0" : "-20px -14px",
         boxShadow: hovered
           ? "0 44px 100px rgba(0,0,0,.6), 0 0 50px rgba(156,39,176,.2)"
           : "0 36px 90px rgba(0,0,0,.55), 0 0 0 1px rgba(156,39,176,.35)",
         transform: hovered ? "translateY(-8px)" : "translateY(0)",
         transition: "transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s",
-        animationDelay: `${[0.05, 0.18, 0.32][index]}s`,
       }
     : {
         position: "relative",
         background: "#ffffff",
-        borderRadius: 24,
-        padding: "40px 34px 44px",
+        borderRadius: mobile ? 20 : 24,
+        padding: mobile ? "28px 20px 32px" : "40px 34px 44px",
         boxShadow: hovered ? "0 20px 56px rgba(156,39,176,.14)" : "none",
         transform: hovered ? "translateY(-6px)" : "translateY(0)",
         transition: "transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s",
@@ -128,9 +132,7 @@ const PlanCard: React.FC<{ plan: Plan; index: number }> = ({ plan, index }) => {
 
   const textColor = plan.featured ? "rgba(255,255,255,.82)" : "#333";
   const mutedColor = plan.featured ? "rgba(255,255,255,.42)" : "#aaa";
-  const dividerColor = plan.featured
-    ? "rgba(255,255,255,.1)"
-    : "rgba(0,0,0,.08)";
+  const dividerColor = plan.featured ? "rgba(255,255,255,.1)" : "rgba(0,0,0,.08)";
 
   return (
     <div
@@ -139,97 +141,29 @@ const PlanCard: React.FC<{ plan: Plan; index: number }> = ({ plan, index }) => {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      {/* 3D Blob decoration */}
-      <div
-        style={{
-          position: "absolute",
-          top: -30,
-          right: 26,
-          width: 64,
-          height: 64,
-          pointerEvents: "none",
-          zIndex: 10,
-          display: "flex",
-          alignItems: "flex-end",
-        }}
-      ></div>
-
       {/* Price */}
-      <div
-        style={{
-          display: "flex",
-          alignItems: "baseline",
-          gap: 6,
-          marginBottom: 4,
-        }}
-      >
-        <span
-          className="text-4xl font-bold"
-          style={{
-            color: plan.featured ? "#fff" : "#111",
-          }}
-        >
+      <div style={{ display: "flex", alignItems: "baseline", gap: 6, marginBottom: 4 }}>
+        <span style={{ fontSize: mobile ? 28 : 36, fontWeight: 700, color: plan.featured ? "#fff" : "#111" }}>
           {plan.price}
         </span>
-        <span
-          style={{
-            fontSize: 17,
-            color: plan.featured ? "rgba(255,255,255,.4)" : "#aaa",
-          }}
-        >
+        <span style={{ fontSize: mobile ? 14 : 17, color: plan.featured ? "rgba(255,255,255,.4)" : "#aaa" }}>
           /mo
         </span>
       </div>
 
-      {/* Price sub (e.g. +10%/Ad Spend) */}
-      <div
-        style={{
-          fontSize: 12,
-          fontWeight: 700,
-          letterSpacing: ".08em",
-          textTransform: "uppercase",
-          color: "#BA68C8",
-          marginBottom: 22,
-          minHeight: 20,
-        }}
-      >
+      {/* Price sub */}
+      <div style={{ fontSize: mobile ? 11 : 12, fontWeight: 700, letterSpacing: ".08em", textTransform: "uppercase", color: "#BA68C8", marginBottom: mobile ? 14 : 22, minHeight: 20 }}>
         {plan.priceSub || ""}
       </div>
 
       {/* Plan badge */}
-      <div
-        style={{
-          display: "inline-flex",
-          alignItems: "center",
-          padding: "6px 20px",
-          borderRadius: 100,
-          fontSize: 13,
-          fontWeight: 700,
-          letterSpacing: ".02em",
-          marginBottom: 18,
-          background: "#9C27B0",
-          color: "#fff",
-          boxShadow: "0 4px 14px rgba(156,39,176,.4)",
-        }}
-      >
+      <div style={{ display: "inline-flex", alignItems: "center", padding: mobile ? "5px 14px" : "6px 20px", borderRadius: 100, fontSize: mobile ? 12 : 13, fontWeight: 700, letterSpacing: ".02em", marginBottom: mobile ? 12 : 18, background: "#9C27B0", color: "#fff", boxShadow: "0 4px 14px rgba(156,39,176,.4)" }}>
         {plan.badge}
       </div>
 
       {/* Recommendation */}
-      <p
-        style={{
-          fontSize: 13,
-          color: mutedColor,
-          lineHeight: 1.65,
-          marginBottom: 22,
-        }}
-      >
-        <span
-          style={{
-            color: plan.featured ? "rgba(255,255,255,.62)" : "#888",
-            fontWeight: 500,
-          }}
-        >
+      <p style={{ fontSize: mobile ? 12 : 13, color: mutedColor, lineHeight: 1.65, marginBottom: mobile ? 14 : 22 }}>
+        <span style={{ color: plan.featured ? "rgba(255,255,255,.62)" : "#888", fontWeight: 500 }}>
           Recommended for:
         </span>
         <br />
@@ -237,42 +171,17 @@ const PlanCard: React.FC<{ plan: Plan; index: number }> = ({ plan, index }) => {
       </p>
 
       {/* Divider */}
-      <div
-        style={{
-          width: "100%",
-          height: 1,
-          background: dividerColor,
-          marginBottom: 18,
-        }}
-      />
+      <div style={{ width: "100%", height: 1, background: dividerColor, marginBottom: mobile ? 12 : 18 }} />
 
       {/* Budget */}
-      <p style={{ fontSize: 13, color: mutedColor, marginBottom: 20 }}>
+      <p style={{ fontSize: mobile ? 12 : 13, color: mutedColor, marginBottom: mobile ? 14 : 20 }}>
         {plan.budget}
       </p>
 
       {/* Features */}
-      <ul
-        style={{
-          listStyle: "none",
-          display: "flex",
-          flexDirection: "column",
-          gap: 13,
-          marginBottom: 30,
-        }}
-      >
+      <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: mobile ? 10 : 13, marginBottom: mobile ? 20 : 30 }}>
         {plan.features.map((feat, i) => (
-          <li
-            key={i}
-            style={{
-              display: "flex",
-              alignItems: "flex-start",
-              gap: 12,
-              fontSize: 13.5,
-              color: textColor,
-              lineHeight: 1.4,
-            }}
-          >
+          <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: 10, fontSize: mobile ? 12 : 13.5, color: textColor, lineHeight: 1.4 }}>
             <CheckIcon />
             {feat}
           </li>
@@ -286,10 +195,7 @@ const PlanCard: React.FC<{ plan: Plan; index: number }> = ({ plan, index }) => {
 };
 
 /* ─── CTA Button ──────────────────────────────────────────────────────────── */
-const CtaButton: React.FC<{ label: string; solid?: boolean }> = ({
-  label,
-  solid,
-}) => {
+const CtaButton: React.FC<{ label: string; solid?: boolean }> = ({ label, solid }) => {
   const [hovered, setHovered] = React.useState(false);
 
   const style: React.CSSProperties = solid
@@ -305,9 +211,7 @@ const CtaButton: React.FC<{ label: string; solid?: boolean }> = ({
         border: "none",
         background: "#9C27B0",
         color: "#fff",
-        boxShadow: hovered
-          ? "0 12px 32px rgba(156,39,176,.55)"
-          : "0 6px 20px rgba(156,39,176,.45)",
+        boxShadow: hovered ? "0 12px 32px rgba(156,39,176,.55)" : "0 6px 20px rgba(156,39,176,.45)",
         transform: hovered ? "translateY(-2px)" : "translateY(0)",
         transition: "all .25s",
       }
@@ -329,11 +233,7 @@ const CtaButton: React.FC<{ label: string; solid?: boolean }> = ({
       };
 
   return (
-    <button
-      style={style}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
+    <button style={style} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
       {label}
     </button>
   );
@@ -341,28 +241,37 @@ const CtaButton: React.FC<{ label: string; solid?: boolean }> = ({
 
 export default function PricingSection() {
   return (
-    <div className="py-24 bg-slate-100">
-      <div className="flex flex-col mx-auto text-center w-1/2">
-        <h2 className="text-5xl font-bold mb-4">Pricing Plan</h2>
-        <p className="font-thin text-lg">
+    <div className="py-12 md:py-24 bg-slate-100">
+
+      {/* ===== Header ===== */}
+      <div className="flex flex-col mx-auto text-center w-11/12 md:w-1/2 px-4 md:px-0">
+        <h2 className="text-2xl md:text-5xl font-bold mb-3 md:mb-4">Pricing Plan</h2>
+        <p className="font-thin text-sm md:text-lg">
           At ABCD MEDIA UAE, we help ambitious brands scale profitably through
           data-driven digital marketing strategies. At ABCD MEDIA UAE,
           profitably through data-driven digital marketing strategies.
         </p>
       </div>
-      {/* pricing */}
+
+      {/* ===== MOBILE: Stacked cards ===== */}
+      <section className="flex md:hidden flex-col gap-4 px-4 pt-8 pb-4">
+        {plans.map((plan, i) => (
+          <PlanCard key={plan.badge} plan={plan} index={i} mobile={true} />
+        ))}
+      </section>
+
+      {/* ===== DESKTOP: Original grid — untouched ===== */}
       <section
+        className="hidden md:flex"
         style={{
           fontFamily: "'DM Sans', sans-serif",
           minHeight: "100vh",
-          display: "flex",
           alignItems: "center",
           justifyContent: "center",
           padding: "60px 20px",
         }}
       >
         <div style={{ width: "100%", maxWidth: 1180 }}>
-          {/* Cards grid */}
           <div
             className="py-10"
             style={{
@@ -379,28 +288,28 @@ export default function PricingSection() {
         </div>
       </section>
 
-      {/* approved */}
-      <section className="max-w-10/12 mx-auto flex">
-        <div className="flex flex-col w-2/3 gap-3 py-10">
-          <h3 className="text-3xl font-bold text-[#9C27B0]">Pricing Plan</h3>
-          <p className=" font-thin text-lg">
+      {/* ===== Approved section ===== */}
+      <section className="max-w-10/12 mx-auto flex flex-col md:flex-row px-4 md:px-0">
+        <div className="flex flex-col w-full md:w-2/3 gap-2 md:gap-3 py-6 md:py-10">
+          <h3 className="text-2xl md:text-3xl font-bold text-[#9C27B0]">Pricing Plan</h3>
+          <p className="font-thin text-sm md:text-lg">
             At ABCD MEDIA UAE, we help ambitious brands scale profitably through
             data-driven digital marketing{" "}
-            <span className="text-[#9C27B0]"> strategies</span>. At ABCD MEDIA
+            <span className="text-[#9C27B0]">strategies</span>. At ABCD MEDIA
             UAE, profitably through data-driven digital marketing{" "}
-            <span className="text-[#9C27B0]"> strategies</span>. At ABCD MEDIA
+            <span className="text-[#9C27B0]">strategies</span>. At ABCD MEDIA
             UAE, we help ambitious brands scale profitably through data-driven
             digital marketing{" "}
-            <span className="text-[#9C27B0]"> strategies</span>. At ABCD MEDIA
+            <span className="text-[#9C27B0]">strategies</span>. At ABCD MEDIA
             UAE, profitably through data-driven digital marketing{" "}
-            <span className="text-[#9C27B0]"> strategies</span>.
+            <span className="text-[#9C27B0]">strategies</span>.
           </p>
         </div>
-        <div className="w-1/3">
+        <div className="w-full md:w-1/3">
           <img
             src="/Subtract.png"
             alt="subtract"
-            className="w-full h-72 object-contain"
+            className="w-full h-48 md:h-72 object-contain"
           />
         </div>
       </section>

@@ -19,7 +19,6 @@ export default function Hero() {
           <source src="/landingpage-hero.mp4" type="video/mp4" />
         </video>
 
-        {/* Dark overlay on LEFT half only — so text is readable over the empty left side of video */}
         <div
           className="absolute inset-0"
           style={{
@@ -28,31 +27,30 @@ export default function Hero() {
           }}
         />
 
-        {/* Overall dark tint */}
         <div className="absolute inset-0 bg-black/30" />
       </div>
 
       {/* ===== Content — LEFT HALF ONLY ===== */}
       <div className="relative z-10 w-full min-h-screen flex items-center">
-        <div className=" w-10/12 flex flex-col justify-center px-10 md:px-16 lg:px-20 pt-28 pb-20">
+        <div className="w-11/12 md:w-10/12 flex flex-col justify-center px-4 sm:px-6 md:px-16 lg:px-20 pt-20 sm:pt-24 pb-16">
 
           {/* Heading */}
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-2xl md:text-4xl lg:text-5xl font-extrabold leading-[1.1] tracking-tight mb-8"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-[1.2] sm:max-w-[320px] md:leading-[1.1] tracking-tight mb-6 text-center md:text-left md:whitespace-nowrap"
           >
             Performance Marketing &amp; Data- <br />Driven Growth for UAE's Most <br />
             Ambitious Brands
           </motion.h1>
 
-          {/* Sub Text */}
+          {/* Sub Text (Hidden on Mobile) */}
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="text-base md:text-lg text-gray-300 mb-10 max-w-lg md:whitespace-nowrap"
+            className="hidden sm:block text-base md:text-lg text-gray-300 mb-10 max-w-lg md:whitespace-nowrap"
           >
             <span className="text-[#CB30E0] font-semibold">
               Performance Driven Digital Marketing That Delivers Real Results.
@@ -66,23 +64,23 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="flex flex-col sm:flex-row items-start sm:items-center gap-10"
+            className="flex flex-col sm:flex-row items-center sm:items-center text-center sm:text-left gap-5 sm:gap-10"
           >
             <Link
               href="#"
-              className="px-12 py-5 rounded-full bg-[#A62DD5] font-semibold text-white hover:bg-[#7b1fa2] hover:scale-105 transition duration-300 whitespace-nowrap"
+              className="px-6 py-3 sm:px-12 sm:py-5 rounded-full bg-[#A62DD5] text-sm sm:text-base font-semibold text-white hover:bg-[#7b1fa2] hover:scale-105 transition duration-300 whitespace-nowrap"
             >
               Learn More
             </Link>
 
-            <div className="flex items-center gap-10">
+            <div className="flex items-center justify-center gap-6 sm:gap-10">
               <div>
-                <h3 className="text-4xl font-bold">100%</h3>
-                <p className="text-sm text-[#CB30E0] mt-1">Happy Clients</p>
+                <h3 className="text-xl sm:text-4xl font-bold">100%</h3>
+                <p className="text-xs sm:text-sm text-[#CB30E0] mt-1">Happy Clients</p>
               </div>
               <div>
-                <h3 className="text-4xl font-bold">50+</h3>
-                <p className="text-sm text-[#CB30E0] mt-1">Experience</p>
+                <h3 className="text-xl sm:text-4xl font-bold">50+</h3>
+                <p className="text-xs sm:text-sm text-[#CB30E0] mt-1">Experience</p>
               </div>
             </div>
           </motion.div>
@@ -90,12 +88,13 @@ export default function Hero() {
       </div>
 
       {/* ===== Bottom Decorative Line ===== */}
-      <div className="absolute bottom-10 left-0 w-full flex items-center justify-center z-10">
-        <div className="relative w-11/12 h-[1px] bg-[#9C27B0]/30">
-          <div className="absolute -top-2.5 left-0 w-5 h-5 rounded-full border-2 border-[#9C27B0]" />
-          <div className="absolute -top-2.5 right-0 w-5 h-5 rounded-full border-2 border-[#9C27B0]" />
+      <div className=" absolute bottom-6 sm:bottom-10 left-0 w-full flex items-center justify-center z-10">
+        <div className="relative w-10/12 sm:w-11/12 h-[1px] bg-[#9C27B0]/30">
+          <div className="absolute -top-2 left-0 w-3 h-3 sm:w-5 sm:h-5 rounded-full border-2 border-[#9C27B0]" />
+          <div className="absolute -top-2 right-0 w-3 h-3 sm:w-5 sm:h-5 rounded-full border-2 border-[#9C27B0]" />
         </div>
       </div>
+
     </section>
   );
 }

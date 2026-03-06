@@ -20,7 +20,7 @@ export default function ExpertiseBanner() {
 
         {/* Purple glow */}
         <div
-          className="absolute left-0 top-0 bottom-0 w-1/2 opacity-20 "
+          className="absolute left-0 top-0 bottom-0 w-1/2 opacity-20"
           style={{
             background:
               "radial-gradient(ellipse 80% 100% at 20% 50%, rgba(140, 30, 180, 0.6) 0%, transparent 70%)",
@@ -28,18 +28,17 @@ export default function ExpertiseBanner() {
         />
 
         {/* ===== LEFT: Text ===== */}
-        <div className="relative z-20 flex flex-col w-1/2 flex-shrink-0 ">
+        <div className="relative z-20 flex flex-col w-full md:w-1/2 flex-shrink-0">
           <h2
-            className="text-white font-bold leading-tight mb-5"
-            style={{ fontSize: "clamp(1.6rem, 3vw, 2.4rem)" }}
+            className="text-white font-bold leading-tight mb-4 md:mb-5 text-2xl md:text-[clamp(1.6rem,3vw,2.4rem)]"
           >
             Our <span className="text-[#C026D3]">Google Ads Expertise?</span>{" "}
             Think Einstein. Your
-            <br />
+            <br className="hidden md:block" />
             Breakthroughs? Pure Genius
           </h2>
 
-          <p className="text-gray-400 text-sm leading-relaxed mb-8 max-w-md">
+          <p className="text-gray-400 text-xs md:text-sm leading-relaxed mb-6 md:mb-8 max-w-md">
             We save our users an average of 23.5% on their Google Ads Spend,
             increase their conversions, help them scale their campaigns AND
             still find time for lunch.
@@ -47,7 +46,7 @@ export default function ExpertiseBanner() {
 
           <Link
             href="/pricing"
-            className="inline-flex items-center justify-center px-10 py-4 rounded-full font-semibold text-white text-sm transition-all duration-300 hover:opacity-90 hover:scale-105 w-fit"
+            className="inline-flex items-center justify-center px-10 py-4 rounded-full font-semibold text-white text-sm transition-all duration-300 hover:opacity-90 hover:scale-105  md:w-fit text-center"
             style={{ background: "#9C27B0" }}
           >
             View Our Pricing
@@ -55,15 +54,12 @@ export default function ExpertiseBanner() {
         </div>
 
         {/* ===== RIGHT: Image ===== */}
-        <div
-          className="relative z-10 shrink-0 
-          w-100 h-100 mt-10 md:mt-0"
-          >
+        <div className="relative z-10 shrink-0 w-full md:w-100 h-56 md:h-100 mt-8 md:mt-0">
           <Image
             src="/expertise-sec-bg.png"
             alt="Einstein character"
             fill
-            className="object-contain object-bottom"
+            className="object-contain object-center md:object-bottom"
             style={{
               filter: "drop-shadow(0 0 30px rgba(156,39,176,0.2))",
             }}

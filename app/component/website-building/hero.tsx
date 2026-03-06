@@ -4,42 +4,91 @@ import { motion } from "framer-motion";
 import { ChevronRight, Home } from "lucide-react";
 import Image from "next/image";
 
-
 export default function Hero() {
   return (
     <section
       className="relative flex items-center text-white overflow-hidden"
       style={{ minHeight: "70vh", background: "#0a0010" }}
     >
- {/* ===== Background Image ===== */}
-<div className="absolute inset-0 z-0 overflow-hidden">
+      {/* ===== Background Image ===== */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <Image
+          src="/heroo-bg.png"
+          alt="Background"
+          fill
+          priority
+          className="object-cover opacity-100"
+        />
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/50" />
+        {/* Extra mobile overlay */}
+        <div className="absolute inset-0 bg-black/40 md:hidden" />
+        {/* Purple radial glow */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 70% 60% at 60% 50%, rgba(120, 30, 160, 0.4) 0%, rgba(80, 0, 120, 0.15) 50%, transparent 75%)",
+          }}
+        />
+      </div>
 
-  <Image
-    src="/heroo-bg.png"
-    alt="Background"
-    fill
-    priority
-    className="object-cover opacity-100"
-  />
+      {/* ===== MOBILE LAYOUT ===== */}
+      <div
+        className="relative z-10 w-full flex-col items-center justify-center flex md:hidden px-5 py-12"
+        style={{ minHeight: "70vh" }}
+      >
+        {/* Breadcrumb — centered */}
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mb-2 mt-16"
+        >
+          <div
+            className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs text-gray-300"
+            style={{ border: "1px solid rgba(255,255,255,0.2)" }}
+          >
+            <Home className="h-3 w-3 flex-shrink-0" />
+            <span>Home</span>
+            <ChevronRight size={10} className="opacity-60" />
+            <span className="opacity-70">Marketing Setup</span>
+            <ChevronRight size={10} className="opacity-60" />
+            <span className="font-medium text-white">Website Building</span>
+          </div>
+        </motion.div>
 
-  {/* Dark Overlay */}
-  <div className="absolute inset-0 bg-black/50" />
+        {/* Image — centered */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.9, delay: 0.2 }}
+          className="relative w-[320px] h-[320px]"
+        >
+          <Image
+            src="/website-hero.png"
+            alt="Website Building Hero"
+            fill
+            className="object-contain drop-shadow-2xl"
+            priority
+          />
+        </motion.div>
 
-  {/* Purple radial glow */}
-  <div
-    className="absolute inset-0"
-    style={{
-      background:
-        "radial-gradient(ellipse 70% 60% at 60% 50%, rgba(120, 30, 160, 0.4) 0%, rgba(80, 0, 120, 0.15) 50%, transparent 75%)",
-    }}
-  />
+        {/* Heading — centered, 3xl */}
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-3xl font-semibold leading-[1.2] text-center"
+        >
+          Top Web Development Services Agency
+        </motion.h1>
+      </div>
 
-</div>
+      {/* ===== DESKTOP LAYOUT — completely untouched ===== */}
+      <div className="relative z-10 w-11/12 max-w-7xl mx-auto hidden md:flex flex-row items-center justify-between gap-8 py-16 min-h-[70vh]">
 
-      {/* ===== Two-Column Layout ===== */}
-      <div className="relative z-10 w-11/12 max-w-7xl mx-auto flex flex-row items-center justify-between gap-8 py-16 min-h-[70vh]">
-
-        {/* ===== LEFT: Text Content ===== */}
+        {/* LEFT: Text Content */}
         <div className="flex-1 flex flex-col justify-center max-w-2xl">
 
           {/* Breadcrumb */}
@@ -51,17 +100,14 @@ export default function Hero() {
           >
             <div
               className="flex items-center gap-2 px-4 py-2 rounded-full"
-              style={{
-                border: "1px solid rgba(255,255,255,0.2)",
-                // background: "rgba(255,255,255,0.05)",
-              }}
+              style={{ border: "1px solid rgba(255,255,255,0.2)" }}
             >
               <Home className="h-5 w-5" />
               <span>Home</span>
               <ChevronRight size={16} className="opacity-60" />
               <span className="opacity-70">Marketing Setup</span>
               <ChevronRight size={16} className="opacity-60" />
-              <span className="font-medium text-white">Website Building </span>
+              <span className="font-medium text-white">Website Building</span>
             </div>
           </motion.div>
 
@@ -71,7 +117,6 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-[1.15] mb-3 md:whitespace-nowrap"
-            
           >
             Top Web Development Services Agency
           </motion.h1>
@@ -81,13 +126,13 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="text-gray-300 text-base  leading-relaxed max-w-xl md:whitespace-nowrap"
+            className="text-gray-300 text-base leading-relaxed max-w-xl md:whitespace-nowrap"
           >
             Evolve your digital presence with 360 web development services focused on creating a <br /> solid online presence. Digital Otters transform your ideas into working websites with a <br /> next-generation tech stack improving ROIs massively.
           </motion.p>
         </div>
 
-        {/* ===== RIGHT: Boy Character Image ===== */}
+        {/* RIGHT: Hero Image */}
         <motion.div
           initial={{ opacity: 0, x: 60 }}
           animate={{ opacity: 1, x: 0 }}
@@ -97,7 +142,7 @@ export default function Hero() {
         >
           <Image
             src="/website-hero.png"
-            alt="Google Ads Hero Character"
+            alt="Website Building Hero"
             fill
             className="object-contain object-bottom drop-shadow-2xl scale-170"
             priority

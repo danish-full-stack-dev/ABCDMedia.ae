@@ -38,29 +38,32 @@ export default function FAQSection() {
   ];
 
   return (
-    <div className="flex flex-col justify-center items-center py-24">
-      <h2 className="text-5xl font-semibold font-sans mb-10">
+    <div className="flex flex-col justify-center items-center py-12 md:py-24 px-4 md:px-0">
+      {/* H2: 2xl on mobile, 5xl on desktop */}
+      <h2 className="text-2xl md:text-5xl font-semibold font-sans mb-6 md:mb-10 text-center">
         Frequently Asked <span className="text-[#9C27B0]"> Questions</span>
       </h2>
-      <div className="space-y-6 max-w-5xl w-full mx-auto">
+
+      <div className="space-y-3 md:space-y-6 max-w-5xl w-full mx-auto">
         {reasons.map((reason) => (
           <div
             key={reason.id}
-            className="rounded-2xl w-full px-6 py-5 cursor-pointer bg-slate-100 transition duration-300"
+            className="rounded-2xl w-full px-4 md:px-6 py-4 md:py-5 cursor-pointer bg-slate-100 transition duration-300"
             onClick={() => toggle(reason.id)}
           >
-            <div className="flex justify-between items-center">
-              <div className="flex items-center gap-3">
-                <h3 className="font-semibold text-base">{reason.title}</h3>
-              </div>
+            <div className="flex justify-between items-center gap-3">
+              {/* Title: sm on mobile, base on desktop */}
+              <h3 className="font-semibold text-sm md:text-base leading-snug">
+                {reason.title}
+              </h3>
 
               <span
-                className={`text-sm p-1 rounded-full ${openId === reason.id ? "bg-[#9C27B0] text-white" : "bg-white text-[#9C27B0]"}`}
+                className={`p-1 rounded-full flex-shrink-0 ${openId === reason.id ? "bg-[#9C27B0] text-white" : "bg-white text-[#9C27B0]"}`}
               >
                 {openId === reason.id ? (
-                  <Minus size={16} />
+                  <Minus size={14} />
                 ) : (
-                  <Plus size={16} />
+                  <Plus size={14} />
                 )}
               </span>
             </div>
@@ -70,7 +73,7 @@ export default function FAQSection() {
                 <motion.p
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: "auto" }}
-                  className="mt-4 text-gray-600 text-base"
+                  className="mt-3 md:mt-4 text-gray-600 text-xs md:text-base"
                   exit={{ height: 0, opacity: 0 }}
                   transition={{ duration: 0.3, ease: "easeInOut" }}
                 >

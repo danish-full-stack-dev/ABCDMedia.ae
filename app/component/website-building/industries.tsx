@@ -7,21 +7,11 @@ const industries = [
       "Sale-oriented e-commerce web development services on Shopify, Woocommerce, Magento, Bigcommerce, Wix, and even custom websites.",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="#CB30E0">
-        <path
-          d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"
-          opacity="0.3"
-        />
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" opacity="0.3" />
         <circle cx="12" cy="8" r="2.5" fill="#CB30E0" />
-        <path
-          d="M12 1C7.58 1 4 4.58 4 9c0 4.5 4.5 10.19 7.27 13.32.38.43 1.08.43 1.46 0C15.5 19.19 20 13.5 20 9c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"
-          fill="#CB30E0"
-        />
-        {/* lightbulb person icon */}
+        <path d="M12 1C7.58 1 4 4.58 4 9c0 4.5 4.5 10.19 7.27 13.32.38.43 1.08.43 1.46 0C15.5 19.19 20 13.5 20 9c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z" fill="#CB30E0" />
         <circle cx="12" cy="7" r="3" fill="#030203" />
-        <path
-          d="M9 21h6v-1H9v1zm0-2h6v-1H9v1zm3-18C8.69 1 6 3.69 6 7c0 2.12 1.07 3.99 2.7 5.1V14h6.6v-1.9C17 10.99 18 9.12 18 7c0-3.31-2.69-6-6-6z"
-          fill="#CB30E0"
-        />
+        <path d="M9 21h6v-1H9v1zm0-2h6v-1H9v1zm3-18C8.69 1 6 3.69 6 7c0 2.12 1.07 3.99 2.7 5.1V14h6.6v-1.9C17 10.99 18 9.12 18 7c0-3.31-2.69-6-6-6z" fill="#CB30E0" />
       </svg>
     ),
   },
@@ -79,40 +69,42 @@ const industries = [
 
 export default function IndustriesWeCater() {
   return (
-    <section className="bg-black py-20 px-6">
-      <div className="w-10/12 mx-auto">
+    <section className="bg-black py-12 md:py-20 px-4 md:px-6">
+      <div className="w-11/12 md:w-10/12 mx-auto">
+
         {/* Heading */}
-        <div className="text-center mb-5">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white">
+        <div className="text-center mb-4 md:mb-5">
+          <h2 className="text-2xl md:text-3xl md:text-4xl font-extrabold text-white">
             <span className="text-[#CB30E0]">Industries</span> We Cater
           </h2>
         </div>
 
         {/* Subtext */}
-        <p className="text-center text-white text-base leading-relaxed max-w-2xl mx-auto mb-14">
+        <p className="text-center text-white text-xs md:text-base leading-relaxed max-w-2xl mx-auto mb-8 md:mb-14">
           Utilizing a collection of top-notch programming and developing
           languages, we have successfully catered to more than 15 different
-          sectors. Some of our latest works are <br />
-          related to Edtech, Fintech, Real Estate, and Healthcare sectors.
+          sectors. Some of our latest works are{" "}
+          <span className="md:hidden">related to Edtech, Fintech, Real Estate, and Healthcare sectors.</span>
+          <span className="hidden md:inline"><br />related to Edtech, Fintech, Real Estate, and Healthcare sectors.</span>
         </p>
 
-        {/* Cards Grid — 3 columns, 2 rows */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
+        {/* Cards Grid — 1 col mobile, 3 col desktop */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-7">
           {industries.map((industry) => (
             <div
               key={industry.title}
               className="rounded-2xl px-4 py-4 bg-black/20 border-l-2 border-[#9C27B0]"
             >
               {/* Icon */}
-              <div className="mb-5">{industry.icon}</div>
+              <div className="mb-3 md:mb-5">{industry.icon}</div>
 
               {/* Title */}
-              <h3 className="text-white/70 font-bold text-lg mb-3">
+              <h3 className="text-white/70 font-bold text-base md:text-lg mb-2 md:mb-3">
                 {industry.title}
               </h3>
 
               {/* Description */}
-              <p className="text-white text-sm leading-relaxed">
+              <p className="text-white text-xs md:text-sm leading-relaxed">
                 {industry.description}
               </p>
             </div>

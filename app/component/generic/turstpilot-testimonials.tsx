@@ -20,7 +20,7 @@ const QuoteBubble: React.FC = () => (
 const Stars: React.FC<{ count?: number }> = ({ count = 5 }) => (
   <div className="flex items-center gap-1">
     {Array.from({ length: count }).map((_, i) => (
-      <svg key={i} width="18" height="18" viewBox="0 0 24 24" fill="#00b77f">
+      <svg key={i} width="14" height="14" viewBox="0 0 24 24" fill="#00b77f">
         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
       </svg>
     ))}
@@ -89,20 +89,16 @@ const testimonials: Testimonial[] = [
 
 /* ─── Single Card ─────────────────────────────────────────────────────────── */
 const TestimonialCard: React.FC<{ t: Testimonial }> = ({ t }) => (
-  <div className="relative bg-white rounded-2xl p-7 shadow-sm border md:min-w-[50svh] min-w-[35svh] border-gray-100 shrink-0 flex flex-col gap-4 hover:-translate-y-1 hover:shadow-xl hover:shadow-purple-100/60 transition-all duration-300">
-    {/* Quote bubble — top right */}
-    {/* <div className="absolute -top-4 right-6">
-      <QuoteBubble />
-    </div> */}
+  <div className="relative bg-white rounded-2xl p-5 md:p-7 shadow-sm border min-w-[75vw] md:min-w-[50svh] border-gray-100 shrink-0 flex flex-col gap-3 md:gap-4 hover:-translate-y-1 hover:shadow-xl hover:shadow-purple-100/60 transition-all duration-300">
 
     {/* Stars + rating */}
-    <div className="flex items-center gap-3 pt-2">
+    <div className="flex items-center gap-2 md:gap-3 pt-2">
       <Stars count={t.rating} />
-      <span className="text-sm font-semibold text-gray-500">5/5 Reviews</span>
+      <span className="text-xs md:text-sm font-semibold text-gray-500">5/5 Reviews</span>
     </div>
 
     {/* Review text */}
-    <p className="text-gray-700 text-[15px] leading-relaxed flex-1">
+    <p className="text-gray-700 text-xs md:text-[15px] leading-relaxed flex-1">
       {t.review.split(" ").length > 20
         ? t.review.split(" ").slice(0, 20).join(" ") + "..."
         : t.review}
@@ -113,22 +109,22 @@ const TestimonialCard: React.FC<{ t: Testimonial }> = ({ t }) => (
 
     {/* Author row */}
     <div className="flex items-center justify-between">
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-2 md:gap-3">
         <img
           src={t.avatar}
           alt={t.name}
-          className="w-11 h-11 rounded-full object-cover ring-2 ring-purple-100"
+          className="w-9 h-9 md:w-11 md:h-11 rounded-full object-cover ring-2 ring-purple-100"
           onError={(e) => {
             (e.target as HTMLImageElement).src =
               `https://ui-avatars.com/api/?name=${encodeURIComponent(t.name)}&background=9C27B0&color=fff`;
           }}
         />
         <div>
-          <p className="font-bold text-gray-900 text-sm">{t.name}</p>
+          <p className="font-bold text-gray-900 text-xs md:text-sm">{t.name}</p>
           <p className="text-gray-400 text-xs">{t.date}</p>
         </div>
       </div>
-      <TrustpilotLogo size={100} />
+      <TrustpilotLogo size={70} />
     </div>
   </div>
 );
@@ -185,41 +181,17 @@ export const TrustpilotTestimonialsSection: React.FC = () => {
       <div className="absolute bottom-10 right-1/4 w-64 h-64 bg-pink-100/40 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative z-10 max-w-10/12 mx-auto overflow-hidden">
-        {/* Header */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
-            What Our Clients Say About us
-          </h2>
-        </motion.div>
-
-        {/* Scroll controls */}
-        {/* <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className="md:flex hidden justify-end gap-3 mb-6 px-1"
-        >
-          <ScrollBtn dir="left" onClick={() => scroll("left")} />
-          <ScrollBtn dir="right" onClick={() => scroll("right")} />
-        </motion.div> */}
 
         {/* Cards track */}
         <div className="relative">
           {/* Left fade */}
-          <div className="absolute left-0 top-0 bottom-0 w-16 bg-linear-to-r from-white via-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-8 md:w-16 bg-linear-to-r from-white via-white to-transparent z-10 pointer-events-none" />
           {/* Right fade */}
-          <div className="absolute right-0 top-0 bottom-0 w-16 bg-linear-to-r from-transparent via-white to-white z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-8 md:w-16 bg-linear-to-r from-transparent via-white to-white z-10 pointer-events-none" />
 
           <motion.div
             ref={scrollRef}
-            className="flex gap-6 py-6 h-auto"
+            className="flex gap-4 md:gap-6 py-6 h-auto"
             initial={{ x: "-100%" }}
             animate={{ x: "0%" }}
             transition={{
@@ -248,42 +220,14 @@ export const TrustpilotTestimonialsSection: React.FC = () => {
               </motion.div>
             ))}
 
-            {/* Duplicate testimonials for infinite scroll */}
-
             {/* Partial right peek spacer */}
             <div className="shrink-0 md:w-10 w-0" />
           </motion.div>
 
-          {/* Hide scrollbar cross-browser */}
           <style>{`
             @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&display=swap');
-            // div::-webkit-scrollbar { display: none; }
           `}</style>
         </div>
-
-        {/* Dots indicator */}
-        {/* <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
-          className="flex justify-center gap-2 mt-4"
-        >
-          {testimonials.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => {
-                if (!scrollRef.current) return;
-                const cardWidth = 400;
-                scrollRef.current.scrollTo({
-                  left: i * cardWidth,
-                  behavior: "smooth",
-                });
-              }}
-              className={`h-1.5 rounded-full transition-all duration-300 ${index === i ? "w-8 bg-[#9C27B0]" : "w-1.5 bg-gray-300 hover:bg-[#9C27B0]/70"}`}
-            />
-          ))}
-        </motion.div> */}
       </div>
     </section>
   );
