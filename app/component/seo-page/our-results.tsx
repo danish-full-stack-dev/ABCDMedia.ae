@@ -133,6 +133,80 @@ function GrowthChart() {
     </div>
   );
 }
+const Chart = () => (
+  <div style={{ position: "relative" }}>
+    {/* 376.92% badge */}
+    <div
+      className={`fade-up delay-2 text-green-400`}
+      style={{
+        position: "absolute",
+        top: "-10px",
+        right: "0",
+        zIndex: 10,
+      }}
+    >
+      <div className="stat-badge">
+        376.92%
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path
+            d="M10 16V4M10 4L4 10M10 4L16 10"
+            stroke="#9C27B0"
+            strokeWidth="3.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </div>
+    </div>
+
+    {/* Chart area */}
+    <div className="md:pt-10 pt-0" style={{ height: "320px" }}>
+      <GrowthChart />
+    </div>
+
+    {/* Bottom label row */}
+    <div
+      className={`fade-up delay-4`}
+      style={{
+        display: "flex",
+        justifyContent: "space-around",
+        alignItems: "center",
+        borderTop: "1px solid rgba(255,255,255,0.08)",
+      }}
+    >
+      <div>
+        <span
+          style={{
+            color: "white",
+            fontFamily: "'Syne', sans-serif",
+            fontWeight: 700,
+            fontSize: "16px",
+          }}
+        >
+          # Top 3 Positions{" "}
+        </span>
+        <span style={{ color: "#71717a", fontSize: "14px" }}>
+          (July 23 – October 23)
+        </span>
+      </div>
+      <div className="logo-text">
+        WsC<span className="logo-dot">.</span>
+        <div
+          style={{
+            fontSize: "9px",
+            fontWeight: 400,
+            color: "#71717a",
+            textAlign: "right",
+            letterSpacing: "2px",
+            marginTop: "-2px",
+          }}
+        >
+          LONDON
+        </div>
+      </div>
+    </div>
+  </div>
+);
 
 export default function SEOResults() {
   const [visible, setVisible] = useState(false);
@@ -217,47 +291,18 @@ export default function SEOResults() {
         }
       `}</style>
 
-      <section
-        className="seo-section bg-black"
-        style={{
-          minHeight: "100vh",
-          display: "flex",
-          alignItems: "center",
-          padding: "80px 40px",
-          fontFamily: "'DM Sans', sans-serif",
-          overflow: "hidden",
-        }}
-      >
-        <div
-          className="max-w-10/12"
-          style={{
-            margin: "0 auto",
-            width: "100%",
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "80px",
-            alignItems: "center",
-          }}
-        >
+      <section className="seo-section bg-black flex flex-col md:min-h-screen md:py-0 py-16 items-center justify-center overflow-hidden">
+        <div className="md:max-w-10/12 w-full md:px-0 px-6">
+          <h2
+            className={`fade-up delay-1 md:text-5xl text-2xl md:w-1/2 w-full font-bold md:leading-11 text-start ${visible ? "visible" : ""} text-white mb-6`}
+          >
+            Our results?{" "}
+            <span className="text-[#9C27B0]">A testament to our expertise</span>
+          </h2>
+        </div>
+        <div className="md:max-w-10/12 w-full mx-auto flex md:flex-row flex-col items-center px-6">
           {/* LEFT: Copy */}
-          <div>
-            <h2
-              className={`fade-up delay-1 ${visible ? "visible" : ""}`}
-              style={{
-                fontFamily: "'Syne', sans-serif",
-                fontSize: "clamp(32px, 4vw, 52px)",
-                fontWeight: 800,
-                lineHeight: 1.1,
-                color: "white",
-                marginBottom: "24px",
-              }}
-            >
-              Our results?{" "}
-              <span className="text-[#9C27B0]">
-                A testament to our expertise
-              </span>
-            </h2>
-
+          <div className="md:w-3/5 w-full md:order-1 order-2">
             <p
               className={`fade-up delay-2 ${visible ? "visible" : ""}`}
               style={{
@@ -289,7 +334,11 @@ export default function SEOResults() {
               {features.map((f, i) => (
                 <li
                   key={i}
-                  style={{ display: "flex", alignItems: "center", gap: "12px" }}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "12px",
+                  }}
                 >
                   <span className="check-icon bg-[#9C27B0]">
                     <svg width="11" height="9" viewBox="0 0 11 9" fill="none">
@@ -329,79 +378,8 @@ export default function SEOResults() {
           </div>
 
           {/* RIGHT: Chart */}
-          <div style={{ position: "relative" }}>
-            {/* 376.92% badge */}
-            <div
-              className={`fade-up delay-2 text-green-400 ${visible ? "visible" : ""}`}
-              style={{
-                position: "absolute",
-                top: "-10px",
-                right: "0",
-                zIndex: 10,
-              }}
-            >
-              <div className="stat-badge">
-                376.92%
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path
-                    d="M10 16V4M10 4L4 10M10 4L16 10"
-                    stroke="#9C27B0"
-                    strokeWidth="3.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
-            </div>
-
-            {/* Chart area */}
-            <div style={{ height: "320px", paddingTop: "40px" }}>
-              <GrowthChart />
-            </div>
-
-            {/* Bottom label row */}
-            <div
-              className={`fade-up delay-4 ${visible ? "visible" : ""}`}
-              style={{
-                display: "flex",
-                justifyContent: "space-around",
-                alignItems: "center",
-                marginTop: "16px",
-                borderTop: "1px solid rgba(255,255,255,0.08)",
-                paddingTop: "16px",
-              }}
-            >
-              <div>
-                <span
-                  style={{
-                    color: "white",
-                    fontFamily: "'Syne', sans-serif",
-                    fontWeight: 700,
-                    fontSize: "16px",
-                  }}
-                >
-                  # Top 3 Positions{" "}
-                </span>
-                <span style={{ color: "#71717a", fontSize: "14px" }}>
-                  (July 23 – October 23)
-                </span>
-              </div>
-              <div className="logo-text">
-                WsC<span className="logo-dot">.</span>
-                <div
-                  style={{
-                    fontSize: "9px",
-                    fontWeight: 400,
-                    color: "#71717a",
-                    textAlign: "right",
-                    letterSpacing: "2px",
-                    marginTop: "-2px",
-                  }}
-                >
-                  LONDON
-                </div>
-              </div>
-            </div>
+          <div className="md:order-2 order-1">
+            <Chart />
           </div>
         </div>
       </section>

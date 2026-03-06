@@ -160,6 +160,8 @@ const ScrollBtn: React.FC<{ dir: "left" | "right"; onClick: () => void }> = ({
 export const TrustpilotTestimonialsSection: React.FC = () => {
   const [index, setIndex] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const isMd = window.innerWidth <= 768;
+
 
   const scroll = (dir: "left" | "right") => {
     if (!scrollRef.current) return;
@@ -196,7 +198,7 @@ export const TrustpilotTestimonialsSection: React.FC = () => {
             animate={{ x: "0%" }}
             transition={{
               delay: 0.15,
-              duration: 20,
+              duration: isMd ? 10 : 20,
               ease: "linear",
               repeat: Infinity,
             }}

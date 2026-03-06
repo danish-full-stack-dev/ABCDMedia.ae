@@ -175,9 +175,8 @@ export const ApproachSection: React.FC = () => {
       <div className="max-w-9/12 mx-auto">
         {/* ── Top header row ─────────────────────────────────────────────── */}
         <div
+          className="grid md:grid-cols-2"
           style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
             gap: 48,
             alignItems: "flex-start",
             marginBottom: 48,
@@ -186,9 +185,8 @@ export const ApproachSection: React.FC = () => {
           {/* Left */}
           <div>
             <p
+              className="md:text-sm text-xs font-sans font-medium"
               style={{
-                fontSize: 13,
-                fontWeight: 600,
                 letterSpacing: ".1em",
                 textTransform: "uppercase",
                 color: "#9C27B0",
@@ -198,9 +196,8 @@ export const ApproachSection: React.FC = () => {
               Our Approach
             </p>
             <h2
+              className="md:text-5xl font-bold text-2xl"
               style={{
-                fontSize: "clamp(32px, 3.5vw, 50px)",
-                fontWeight: 800,
                 color: "#111",
                 lineHeight: 1.15,
                 letterSpacing: "-.025em",
@@ -232,232 +229,44 @@ export const ApproachSection: React.FC = () => {
 
         {/* ── Research — full-width hero card ────────────────────────────── */}
         <div
-          className="hover:text-white bg-slate-100 duration-400 transition-colors hover:bg-linear-to-br hover:from-[#2d1b4e] hover:via-[#6a0dad] to-[#c026d3]"
+          className="relative rounded-2xl overflow-hidden flex md:flex-row flex-col items-center mb-6 hover:text-white bg-slate-100 duration-400 transition-colors hover:bg-linear-to-br hover:from-[#2d1b4e] hover:via-[#6a0dad] to-[#c026d3]"
           style={{
-            position: "relative",
-            borderRadius: 20,
-            overflow: "hidden",
             minHeight: 280,
-            display: "flex",
-            alignItems: "center",
-            marginBottom: 24,
           }}
         >
-          {/* Noise texture overlay */}
-          <div
-            style={{
-              position: "absolute",
-              inset: 0,
-              opacity: 0.4,
-              pointerEvents: "none",
-            }}
-          />
-
-          {/* Glow blobs */}
-          <div
-            style={{
-              position: "absolute",
-              top: -60,
-              right: 200,
-              width: 300,
-              height: 300,
-              borderRadius: "50%",
-              filter: "blur(70px)",
-              pointerEvents: "none",
-            }}
-          />
-          <div
-            style={{
-              position: "absolute",
-              bottom: -40,
-              left: 100,
-              width: 200,
-              height: 200,
-              borderRadius: "50%",
-              filter: "blur(50px)",
-              pointerEvents: "none",
-            }}
-          />
-
           {/* Content */}
-          <div
-            style={{
-              position: "relative",
-              zIndex: 1,
-              padding: "52px 56px",
-              flex: 1,
-              maxWidth: "55%",
-            }}
-          >
-            <h3
-              style={{
-                fontFamily: "'Bricolage Grotesque', sans-serif",
-                fontSize: 36,
-                fontWeight: 800,
-                marginBottom: 18,
-                letterSpacing: "-.02em",
-              }}
-            >
-              Research
-            </h3>
-            <p
-              style={{
-                fontSize: 15,
-                lineHeight: 1.75,
-                margin: 0,
-                maxWidth: 520,
-              }}
-            >
+          <div className="md:px-14 md:w-3/4 w-full md:order-1 order-2 md:py-0 p-4">
+            <h3 className="md:text-4xl text-xl font-bold md:mb-4">Research</h3>
+            <p className="md:text-base text-sm">
               We delve into understanding your business, industry, and
               competitors. By conducting thorough research and analysing market
               trends, we build our SEO strategies on robust, data-driven
               foundations.
             </p>
           </div>
-
-          {/* Illustration — right side */}
-          <div
-            style={{
-              position: "absolute",
-              right: 0,
-              top: 0,
-              bottom: 0,
-              width: "48%",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "flex-end",
-              paddingRight: 0,
-            }}
-          >
-            {/* Mock browser dashboard */}
-            <div
-              style={{
-                background: "#fff",
-                borderRadius: "12px 0 0 0",
-                padding: "0",
-                boxShadow: "-12px 12px 48px rgba(0,0,0,.3)",
-                overflow: "hidden",
-                width: 320,
-                height: 210,
-                position: "absolute",
-                right: 0,
-                bottom: 0,
-              }}
-            >
-              {/* Browser top bar */}
-              <div
-                style={{
-                  background: "#1a1a2e",
-                  padding: "8px 14px",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 6,
-                }}
-              >
-                <span
-                  style={{
-                    width: 8,
-                    height: 8,
-                    borderRadius: "50%",
-                    background: "#ff5f57",
-                    display: "inline-block",
-                  }}
-                />
-                <span
-                  style={{
-                    width: 8,
-                    height: 8,
-                    borderRadius: "50%",
-                    background: "#febc2e",
-                    display: "inline-block",
-                  }}
-                />
-                <span
-                  style={{
-                    width: 8,
-                    height: 8,
-                    borderRadius: "50%",
-                    background: "#28c840",
-                    display: "inline-block",
-                  }}
-                />
-              </div>
-              <div style={{ padding: 12 }}>
-                <DashboardIllustration />
-              </div>
-            </div>
-
-            {/* Floating pie chart */}
-            <div
-              style={{
-                position: "absolute",
-                right: 290,
-                top: "50%",
-                transform: "translateY(-60%)",
-                width: 80,
-                height: 80,
-              }}
-            >
-              <svg viewBox="0 0 80 80" width="80" height="80">
-                <circle cx="40" cy="40" r="38" fill="rgba(156,39,176,.15)" />
-                <path d="M40 2 A38 38 0 0 1 78 40 L40 40Z" fill="#9C27B0" />
-                <path d="M78 40 A38 38 0 0 1 40 78 L40 40Z" fill="#BA68C8" />
-                <path
-                  d="M40 78 A38 38 0 0 1 2 40 L40 40Z"
-                  fill="rgba(156,39,176,.4)"
-                />
-                <circle cx="40" cy="40" r="18" fill="white" />
-              </svg>
-            </div>
+          <div className="md:absolute md:w-1/4 md:-right-5 md:-bottom-5 md:order-2 order-1">
+            <img
+              src="/3d-graph.jpg"
+              alt="chart"
+              className="md:h-40 md:object-contain h-auto object-cover w-full"
+            />
           </div>
         </div>
 
         {/* ── Bottom two cards ────────────────────────────────────────────── */}
-        <div className="grid grid-flow-col grid-cols-5 gap-5">
+        <div className="grid md:grid-flow-col grid-flow-row md:grid-cols-5 grid-cols-1 md:space-x-5 space-y-5">
           {/* Strategise */}
           <div
-            className="grid col-span-2 text-black  hover:text-white bg-slate-100 duration-300 transition-colors hover:bg-linear-to-br hover:from-[#2d1b4e] hover:via-[#6a0dad] to-[#c026d3]"
+            className="flex flex-col md:col-span-3 grid-flow-row relative md:py-11 md:px-10 p-4 overflow-hidden rounded-2xl text-black  hover:text-white bg-slate-100 duration-300 transition-colors hover:bg-linear-to-br hover:from-[#2d1b4e] hover:via-[#6a0dad] to-[#c026d3]"
             style={{
-              borderRadius: 20,
-              padding: "44px 40px",
-              position: "relative",
-              overflow: "hidden",
-              minHeight: 260,
+              minHeight: 240,
               border: "1px solid rgba(156,39,176,.1)",
             }}
           >
-            {/* Decorative circle bg */}
-            <div
-              style={{
-                position: "absolute",
-                top: -40,
-                right: -40,
-                width: 200,
-                height: 200,
-                borderRadius: "50%",
-                pointerEvents: "none",
-              }}
-            />
-
-            <h3
-              style={{
-                fontFamily: "'Bricolage Grotesque', sans-serif",
-                fontSize: 28,
-                fontWeight: 800,
-                marginBottom: 14,
-                letterSpacing: "-.02em",
-              }}
-            >
+            <h3 className="md:text-4xl text-xl font-bold md:mb-4">
               Strategise
             </h3>
-            <p
-              style={{
-                fontSize: 14.5,
-                lineHeight: 1.75,
-                margin: 0,
-                maxWidth: 300,
-              }}
-            >
+            <p className="md:text-base text-sm">
               Every business is unique. By leveraging our research, we develop
               bespoke Google Ads strategies tailored to your specific goals,
               audience, and budget.
@@ -467,7 +276,7 @@ export const ApproachSection: React.FC = () => {
             <div
               style={{
                 position: "absolute",
-                bottom: 10,
+                bottom: -5,
                 right: 0,
                 pointerEvents: "none",
               }}
@@ -478,13 +287,9 @@ export const ApproachSection: React.FC = () => {
 
           {/* Analyse */}
           <div
-            className="grid col-span-3 text-black hover:text-white bg-slate-100 duration-300 transition-colors hover:bg-linear-to-br hover:from-[#2d1b4e] hover:via-[#6a0dad] to-[#c026d3]"
+            className="flex flex-col md:col-span-3 grid-flow-row relative md:py-11 md:px-10 p-4 overflow-hidden rounded-2xl text-black  hover:text-white bg-slate-100 duration-300 transition-colors hover:bg-linear-to-br hover:from-[#2d1b4e] hover:via-[#6a0dad] to-[#c026d3]"
             style={{
-              borderRadius: 20,
-              padding: "44px 40px",
-              position: "relative",
-              overflow: "hidden",
-              minHeight: 260,
+              minHeight: 240,
               border: "1px solid rgba(156,39,176,.1)",
             }}
           >
@@ -501,274 +306,8 @@ export const ApproachSection: React.FC = () => {
               }}
             />
 
-            <h3
-              style={{
-                fontFamily: "'Bricolage Grotesque', sans-serif",
-                fontSize: 28,
-                fontWeight: 800,
-                marginBottom: 14,
-                letterSpacing: "-.02em",
-              }}
-            >
-              Analyse
-            </h3>
-            <p
-              style={{
-                fontSize: 14.5,
-                lineHeight: 1.75,
-                margin: 0,
-                maxWidth: 340,
-              }}
-            >
-              Performance metrics guide our efforts. We continuously monitor key
-              indicators, such as click-through rates and conversion data, to
-              refine and optimise your campaigns.
-            </p>
-
-            {/* Illustration — bottom right */}
-            <div
-              style={{
-                position: "absolute",
-                bottom: 0,
-                right: 20,
-                pointerEvents: "none",
-              }}
-            >
-              <img src="/rye-assic.png" alt="" className="w-40 h-20" />
-            </div>
-          </div>
-        </div>
-
-        {/* Optimise */}
-        <div
-          className="hover:text-white bg-slate-100 duration-300 transition-colors hover:bg-linear-to-br hover:from-[#2d1b4e] hover:via-[#6a0dad] to-[#c026d3]"
-          style={{
-            position: "relative",
-            borderRadius: 20,
-            overflow: "hidden",
-            minHeight: 280,
-            display: "flex",
-            alignItems: "center",
-            marginTop: 24,
-            marginBottom: 24,
-          }}
-        >
-          {/* Noise texture overlay */}
-          <div
-            style={{
-              position: "absolute",
-              inset: 0,
-              opacity: 0.4,
-              pointerEvents: "none",
-            }}
-          />
-
-          {/* Glow blobs */}
-          <div
-            style={{
-              position: "absolute",
-              top: -60,
-              right: 200,
-              width: 300,
-              height: 300,
-              borderRadius: "50%",
-              filter: "blur(70px)",
-              pointerEvents: "none",
-            }}
-          />
-          <div
-            style={{
-              position: "absolute",
-              bottom: -40,
-              left: 100,
-              width: 200,
-              height: 200,
-              borderRadius: "50%",
-              filter: "blur(50px)",
-              pointerEvents: "none",
-            }}
-          />
-
-          {/* Content */}
-          <div
-            style={{
-              position: "relative",
-              zIndex: 1,
-              padding: "52px 56px",
-              flex: 1,
-              maxWidth: "55%",
-            }}
-          >
-            <h3
-              style={{
-                fontFamily: "'Bricolage Grotesque', sans-serif",
-                fontSize: 36,
-                fontWeight: 800,
-                marginBottom: 18,
-                letterSpacing: "-.02em",
-              }}
-            >
-              Optimise
-            </h3>
-            <p
-              style={{
-                fontSize: 15,
-                lineHeight: 1.75,
-                margin: 0,
-                maxWidth: 520,
-              }}
-            >
-              We delve into understanding your business, industry, and
-              competitors. By conducting thorough research and analysing market
-              trends, we build our SEO strategies on robust, data-driven
-              foundations.
-            </p>
-          </div>
-
-          {/* Illustration — right side */}
-          <div
-            style={{
-              position: "absolute",
-              right: 0,
-              top: 0,
-              bottom: 0,
-              width: "48%",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "flex-end",
-              paddingRight: 0,
-            }}
-          >
-            {/* Mock browser dashboard */}
-            <div
-              style={{
-                background: "#fff",
-                borderRadius: "12px 0 0 0",
-                padding: "0",
-                boxShadow: "-12px 12px 48px rgba(0,0,0,.3)",
-                overflow: "hidden",
-                width: 320,
-                height: 210,
-                position: "absolute",
-                right: 0,
-                bottom: 0,
-              }}
-            >
-              {/* Browser top bar */}
-              <div
-                style={{
-                  background: "#1a1a2e",
-                  padding: "8px 14px",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 6,
-                }}
-              >
-                <span
-                  style={{
-                    width: 8,
-                    height: 8,
-                    borderRadius: "50%",
-                    background: "#ff5f57",
-                    display: "inline-block",
-                  }}
-                />
-                <span
-                  style={{
-                    width: 8,
-                    height: 8,
-                    borderRadius: "50%",
-                    background: "#febc2e",
-                    display: "inline-block",
-                  }}
-                />
-                <span
-                  style={{
-                    width: 8,
-                    height: 8,
-                    borderRadius: "50%",
-                    background: "#28c840",
-                    display: "inline-block",
-                  }}
-                />
-              </div>
-              <div style={{ padding: 12 }}>
-                <DashboardIllustration />
-              </div>
-            </div>
-
-            {/* Floating pie chart */}
-            <div
-              style={{
-                position: "absolute",
-                right: 290,
-                top: "50%",
-                transform: "translateY(-60%)",
-                width: 80,
-                height: 80,
-              }}
-            >
-              <svg viewBox="0 0 80 80" width="80" height="80">
-                <circle cx="40" cy="40" r="38" fill="rgba(156,39,176,.15)" />
-                <path d="M40 2 A38 38 0 0 1 78 40 L40 40Z" fill="#9C27B0" />
-                <path d="M78 40 A38 38 0 0 1 40 78 L40 40Z" fill="#BA68C8" />
-                <path
-                  d="M40 78 A38 38 0 0 1 2 40 L40 40Z"
-                  fill="rgba(156,39,176,.4)"
-                />
-                <circle cx="40" cy="40" r="18" fill="white" />
-              </svg>
-            </div>
-          </div>
-        </div>
-
-        {/* ── Bottom two cards ────────────────────────────────────────────── */}
-        <div className="grid grid-flow-col grid-cols-5 gap-5">
-          {/* Report */}
-          <div
-            className="grid col-span-3 text-black hover:text-white bg-slate-100 duration-300 transition-colors hover:bg-linear-to-br hover:from-[#2d1b4e] hover:via-[#6a0dad] to-[#c026d3]"
-            style={{
-              borderRadius: 20,
-              padding: "44px 40px",
-              position: "relative",
-              overflow: "hidden",
-              minHeight: 260,
-              border: "1px solid rgba(156,39,176,.1)",
-            }}
-          >
-            {/* Decorative circle bg */}
-            <div
-              style={{
-                position: "absolute",
-                top: -40,
-                right: -40,
-                width: 200,
-                height: 200,
-                background: "rgba(156,39,176,.06)",
-                borderRadius: "50%",
-                pointerEvents: "none",
-              }}
-            />
-
-            <h3
-              style={{
-                fontFamily: "'Bricolage Grotesque', sans-serif",
-                fontSize: 28,
-                fontWeight: 800,
-                marginBottom: 14,
-                letterSpacing: "-.02em",
-              }}
-            >
-              Report
-            </h3>
-            <p
-              style={{
-                fontSize: 14.5,
-                lineHeight: 1.75,
-                margin: 0,
-                maxWidth: 300,
-              }}
-            >
+            <h3 className="md:text-4xl text-xl font-bold md:mb-4">Analyze</h3>
+            <p className="md:text-base text-sm">
               Every business is unique. By leveraging our research, we develop
               bespoke Google Ads strategies tailored to your specific goals,
               audience, and budget.
@@ -778,7 +317,66 @@ export const ApproachSection: React.FC = () => {
             <div
               style={{
                 position: "absolute",
-                bottom: 10,
+                bottom: 0,
+                right: 20,
+                pointerEvents: "none",
+              }}
+            >
+              <img src="/rye-assic.png" alt="" className="w-40 h-20" />
+            </div>
+          </div>
+        </div>
+
+        {/* ── Research — full-width hero card ────────────────────────────── */}
+        <div
+          className="relative rounded-2xl mt-6 overflow-hidden flex md:flex-row flex-col items-center mb-6 hover:text-white bg-slate-100 duration-400 transition-colors hover:bg-linear-to-br hover:from-[#2d1b4e] hover:via-[#6a0dad] to-[#c026d3]"
+          style={{
+            minHeight: 280,
+          }}
+        >
+          {/* Content */}
+          <div className="md:px-14 md:w-3/4 w-full md:order-1 order-2 md:py-0 p-4">
+            <h3 className="md:text-4xl text-xl font-bold md:mb-4">Optimize</h3>
+            <p className="md:text-base text-sm">
+              We delve into understanding your business, industry, and
+              competitors. By conducting thorough research and analysing market
+              trends, we build our SEO strategies on robust, data-driven
+              foundations.
+            </p>
+          </div>
+          <div className="md:absolute md:w-1/4 md:-right-5 md:-bottom-5 md:order-2 order-1">
+            <img
+              src="/3d-graph.jpg"
+              alt="chart"
+              className="md:h-40 md:object-contain h-auto object-cover w-full"
+            />
+          </div>
+        </div>
+
+        {/* ── Bottom two cards ────────────────────────────────────────────── */}
+        <div className="grid md:grid-flow-col grid-flow-row md:grid-cols-5 grid-cols-1 md:space-x-5 space-y-5">
+          {/* Strategise */}
+          <div
+            className="flex flex-col md:col-span-3 grid-flow-row relative md:py-11 md:px-10 p-4 overflow-hidden rounded-2xl text-black  hover:text-white bg-slate-100 duration-300 transition-colors hover:bg-linear-to-br hover:from-[#2d1b4e] hover:via-[#6a0dad] to-[#c026d3]"
+            style={{
+              minHeight: 240,
+              border: "1px solid rgba(156,39,176,.1)",
+            }}
+          >
+            <h3 className="md:text-4xl text-xl font-bold md:mb-4">
+              Strategise
+            </h3>
+            <p className="md:text-base text-sm">
+              Every business is unique. By leveraging our research, we develop
+              bespoke Google Ads strategies tailored to your specific goals,
+              audience, and budget.
+            </p>
+
+            {/* Illustration — bottom right */}
+            <div
+              style={{
+                position: "absolute",
+                bottom: -5,
                 right: 0,
                 pointerEvents: "none",
               }}
@@ -787,15 +385,11 @@ export const ApproachSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Review */}
+          {/* Analyse */}
           <div
-            className="grid col-span-2 text-black hover:text-white bg-slate-100 duration-300 transition-colors hover:bg-linear-to-br hover:from-[#2d1b4e] hover:via-[#6a0dad] to-[#c026d3]"
+            className="flex flex-col md:col-span-3 grid-flow-row relative md:py-11 md:px-10 p-4 overflow-hidden rounded-2xl text-black  hover:text-white bg-slate-100 duration-300 transition-colors hover:bg-linear-to-br hover:from-[#2d1b4e] hover:via-[#6a0dad] to-[#c026d3]"
             style={{
-              borderRadius: 20,
-              padding: "44px 40px",
-              position: "relative",
-              overflow: "hidden",
-              minHeight: 260,
+              minHeight: 240,
               border: "1px solid rgba(156,39,176,.1)",
             }}
           >
@@ -812,28 +406,11 @@ export const ApproachSection: React.FC = () => {
               }}
             />
 
-            <h3
-              style={{
-                fontFamily: "'Bricolage Grotesque', sans-serif",
-                fontSize: 28,
-                fontWeight: 800,
-                marginBottom: 14,
-                letterSpacing: "-.02em",
-              }}
-            >
-              Review
-            </h3>
-            <p
-              style={{
-                fontSize: 14.5,
-                lineHeight: 1.75,
-                margin: 0,
-                maxWidth: 340,
-              }}
-            >
-              Performance metrics guide our efforts. We continuously monitor key
-              indicators, such as click-through rates and conversion data, to
-              refine and optimise your campaigns.
+            <h3 className="md:text-4xl text-xl font-bold md:mb-4">Analyze</h3>
+            <p className="md:text-base text-sm">
+              Every business is unique. By leveraging our research, we develop
+              bespoke Google Ads strategies tailored to your specific goals,
+              audience, and budget.
             </p>
 
             {/* Illustration — bottom right */}
@@ -848,7 +425,7 @@ export const ApproachSection: React.FC = () => {
               <img src="/rye-assic.png" alt="" className="w-40 h-20" />
             </div>
           </div>
-        </div>  
+        </div>
       </div>
     </section>
   );
