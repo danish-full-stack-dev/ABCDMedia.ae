@@ -39,10 +39,10 @@ export default function FAQSection() {
 
   return (
     <div className="flex flex-col justify-center items-center py-24 bg-slate-100">
-      <h2 className="text-5xl font-semibold font-sans mb-10">
+      <h2 className="md:text-5xl text-2xl md:w-full max-w-1/2 text-center font-semibold font-sans mb-10">
         Frequently Asked <span className="text-[#9C27B0]"> Questions</span>
       </h2>
-      <div className="space-y-6 max-w-5xl w-full mx-auto">
+      <div className="space-y-6 max-w-5xl w-11/12 mx-auto">
         {reasons.map((reason) => (
           <div
             key={reason.id}
@@ -70,7 +70,7 @@ export default function FAQSection() {
                 <motion.p
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: "auto" }}
-                  className="mt-4 text-gray-600 text-base"
+                  className="mt-4 text-gray-600 md:text-base text-sm"
                   exit={{ height: 0, opacity: 0 }}
                   transition={{ duration: 0.3, ease: "easeInOut" }}
                 >

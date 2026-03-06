@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 /* ─── Google Logo SVG ─────────────────────────────────────────────────────── */
@@ -188,6 +188,22 @@ export const GoogleTestimonialsSection: React.FC = () => {
   const [index, setIndex] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
 
+  
+    const [isMobile, setIsMobile] = useState(false);
+  
+    useEffect(() => {
+      // This code only runs in the browser
+      const handleResize = () => {
+        setIsMobile(window.innerWidth < 768);
+      };
+  
+      // Set initial value
+      handleResize();
+  
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
   const scroll = (dir: "left" | "right") => {
     if (!scrollRef.current) return;
     const amount = 380;
@@ -217,7 +233,7 @@ export const GoogleTestimonialsSection: React.FC = () => {
           className="text-center mb-8 md:mb-12 px-4 md:px-0"
         >
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight">
-            What Our Clients Say About us
+            What Our <span className="text-[#9C27B0]">Clients</span> Say About us
           </h2>
         </motion.div>
 
@@ -235,7 +251,7 @@ export const GoogleTestimonialsSection: React.FC = () => {
             animate={{ x: [0, "-100%"] }}
             transition={{
               delay: 0.15,
-              duration: 20,
+              duration: isMobile ? 10 : 20,
               ease: "linear",
               repeat: Infinity,
             }}
