@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 /* ─── Google Logo SVG ─────────────────────────────────────────────────────── */
@@ -188,7 +188,21 @@ export const GoogleTestimonialsSection: React.FC = () => {
   const [index, setIndex] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  const isMd = window.innerWidth <= 768;
+  
+    const [isMobile, setIsMobile] = useState(false);
+  
+    useEffect(() => {
+      // This code only runs in the browser
+      const handleResize = () => {
+        setIsMobile(window.innerWidth < 768);
+      };
+  
+      // Set initial value
+      handleResize();
+  
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
   const scroll = (dir: "left" | "right") => {
     if (!scrollRef.current) return;
@@ -237,7 +251,7 @@ export const GoogleTestimonialsSection: React.FC = () => {
             animate={{ x: [0, "-100%"] }}
             transition={{
               delay: 0.15,
-              duration: isMd ? 10:20,
+              duration: isMobile ? 10 : 20,
               ease: "linear",
               repeat: Infinity,
             }}

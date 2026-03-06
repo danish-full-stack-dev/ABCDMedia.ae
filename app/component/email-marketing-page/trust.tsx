@@ -1,10 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 export default function BrandMarquee() {
   const brandLogos = [
-     { name: "Khadi", src: "/khaadi.png" },
+    { name: "Khadi", src: "/khaadi.png" },
     { name: "NERF", src: "/nerf.png" },
     { name: "Outfiters", src: "/outfiters.png" },
     { name: "Saya", src: "/saya.png" },
@@ -13,9 +14,20 @@ export default function BrandMarquee() {
     { name: "zero", src: "/zero.png" },
   ];
 
-  const isMobile =
-    typeof window !== "undefined" && window.innerWidth < 768;
+  const [isMobile, setIsMobile] = useState(false);
 
+  useEffect(() => {
+    // This code only runs in the browser
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Set initial value
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <div className="w-full bg-gradient-to-r from-[#15071A] to-[#21073D] py-6 overflow-hidden">
       <motion.div
